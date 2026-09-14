@@ -16,15 +16,13 @@
 
 ---
 
-## 👋 Olá, eu sou Sandro!
+Sou profissional de **Tecnologia da Informação**, com atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, Ciber Segurança e Automação**.
 
-Sou profissional de **Tecnologia da Informação**, com atuação em **ITSM, infraestrutura, redes, servidores, monitoramento, segurança e automação**.
-
-Gosto de transformar necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que possam gerar resultados reais**.
+Gosto de transformar necessidades do dia a dia da TI em **Soluções práticas, ferramentas e projetos que possam gerar resultados reais**.
 
 🎓 Graduado em Defesa Cibernética e Pós-Graduado em **Gestão de Projetos**  
 💻 Infraestrutura e Suporte de TI  
-📊 Monitoramento e observabilidade  
+📊 Monitoramento e Observabilidade  
 🌐 Redes e conectividade  
 🔐 Cybersecurity  
 ⚙️ Automação e scripts  
