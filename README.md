@@ -1,0 +1,166 @@
+<div align="center">
+
+# 👨‍💻 Sandro Ferreira
+
+### Analista de TI • ITSM • Infraestrutura • Monitoramento • Cybersecurity
+
+[![GitHub](https://img.shields.io/badge/GitHub-sandronsk1977--creator-181717?style=for-the-badge&logo=github)](https://github.com/sandronsk1977-creator)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sandro%20Ferreira-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sandro-ferreira-5816b4284/)
+[![Website](https://img.shields.io/badge/Website-Projetos%20Disruptivos-00AEEF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://projetosdisruptivos.com.br/)
+
+<br>
+
+> 🚀 **Transformando problemas de TI em soluções inteligentes, monitoráveis e automatizadas.**
+
+</div>
+
+---
+
+## 👋 Olá, eu sou Sandro!
+
+Sou profissional de **Tecnologia da Informação**, com atuação em **ITSM, infraestrutura, redes, servidores, monitoramento, segurança e automação**.
+
+Gosto de transformar necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que possam gerar resultados reais**.
+
+🎓 Estudante de **Gestão de Projetos**  
+💻 Infraestrutura e Suporte de TI  
+📊 Monitoramento e observabilidade  
+🌐 Redes e conectividade  
+🔐 Cybersecurity  
+⚙️ Automação e scripts  
+🐍 Python  
+📈 Zabbix + Grafana  
+
+---
+
+# 🛠️ Tecnologias & Ferramentas
+
+### 💻 Infraestrutura
+
+![Windows Server](https://img.shields.io/badge/Windows%20Server-0078D4?style=flat-square&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Active Directory](https://img.shields.io/badge/Active%20Directory-0078D4?style=flat-square&logo=microsoft&logoColor=white)
+![Hyper-V](https://img.shields.io/badge/Hyper--V-0078D4?style=flat-square&logo=microsoft&logoColor=white)
+![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=flat-square&logo=microsoft&logoColor=white)
+
+### 📊 Monitoramento
+
+![Zabbix](https://img.shields.io/badge/Zabbix-D40000?style=flat-square&logo=zabbix&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+![SNMP](https://img.shields.io/badge/SNMP-1F2937?style=flat-square)
+![Observability](https://img.shields.io/badge/Observability-6C63FF?style=flat-square)
+
+### 🌐 Redes
+
+![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
+![VLAN](https://img.shields.io/badge/VLAN-0052CC?style=flat-square)
+![TCP/IP](https://img.shields.io/badge/TCP%2FIP-1F2937?style=flat-square)
+![DNS](https://img.shields.io/badge/DNS-4285F4?style=flat-square&logo=google&logoColor=white)
+![DHCP](https://img.shields.io/badge/DHCP-0078D4?style=flat-square)
+![Firewall](https://img.shields.io/badge/Firewall-EF4444?style=flat-square)
+
+### ⚙️ Automação & Desenvolvimento
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-121011?style=flat-square&logo=gnubash&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+---
+
+# 🚀 Projetos em destaque
+
+<div align="center">
+
+<a href="https://github.com/sandronsk1977-creator/portfolio">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=sandronsk1977-creator&repo=portfolio&theme=tokyonight&hide_border=true" />
+</a>
+
+<a href="https://github.com/sandronsk1977-creator/VLANS">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=sandronsk1977-creator&repo=VLANS&theme=tokyonight&hide_border=true" />
+</a>
+
+</div>
+
+### 🌐 Portfolio
+
+Projeto voltado para apresentação profissional, desenvolvimento web e organização de soluções.
+
+**Tecnologias:** HTML • CSS • JavaScript
+
+---
+
+### 🔀 Simulador de VLANs
+
+Simulador interativo para criação e representação de VLANs e cenários de redes.
+
+**Objetivo:** facilitar o entendimento e planejamento de ambientes de rede.
+
+**Tecnologias:** HTML • CSS • JavaScript • Redes
+
+---
+
+### 🔐 SF-Cyber
+
+Projeto voltado para **Cybersecurity**, estudos, scripts e ferramentas relacionadas à segurança da informação.
+
+**Tecnologias:** Python • Scripts • Segurança
+
+---
+
+### 🎮 Rede Virtual
+
+Projeto voltado para criação de **ambientes gamificados para aprendizagem**, buscando aumentar o engajamento e a participação dos alunos.
+
+**Tecnologias:** HTML • CSS • JavaScript • Gamificação
+
+---
+
+# 📈 GitHub Analytics
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
+
+</div>
+
+---
+
+# 🏆 GitHub Achievements
+
+<div align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=sandronsk1977-creator&theme=tokyonight&no-frame=true&no-bg=true&margin-w=10&row=1"/>
+
+</div>
+
+---
+
+# 📊 Atividade no GitHub
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=sandronsk1977-creator&theme=tokyo-night&hide_border=true&area=true"/>
+
+</div>
+
+---
+
+# 🧠 O que estou estudando
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│  🐍 Python                                          │
+│  🤖 Automação                                       │
+│  🔐 Cybersecurity                                   │
+│  ☁️  Cloud Computing                                │
+│  📊 Observabilidade                                 │
+│  🚀 DevOps                                          │
+│  📋 Gestão de Projetos                              │
+│                                                     │
+└─────────────────────────────────────────────────────┘
