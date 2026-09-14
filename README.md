@@ -116,35 +116,13 @@ Projeto voltado para criação de **ambientes gamificados para aprendizagem**, b
 
 ---
 
-# 📈 GitHub Analytics
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
-
-</div>
-
---
-
-# 📊 Atividade no GitHub
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=sandronsk1977-creator&theme=tokyo-night&hide_border=true&area=true"/>
-
-</div>
-
----
-
 # 🧠 O que estou estudando
 
 ```text
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
 │  🐍 Python                                          │
-│  🤖 Automação                                       │
+│  🤖 Automação com IA                                     │
 │  🔐 Cybersecurity                                   │
 │  ☁️  Cloud Computing                                │
 │  📊 Observabilidade                                 │
