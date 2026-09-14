@@ -22,7 +22,7 @@ Sou profissional de **Tecnologia da Informação**, com atuação em **ITSM, inf
 
 Gosto de transformar necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que possam gerar resultados reais**.
 
-🎓 Estudante de **Gestão de Projetos**  
+🎓 Graduado em Defesa Cibernética e Pós-Graduado em **Gestão de Projetos**  
 💻 Infraestrutura e Suporte de TI  
 📊 Monitoramento e observabilidade  
 🌐 Redes e conectividade  
@@ -128,17 +128,7 @@ Projeto voltado para criação de **ambientes gamificados para aprendizagem**, b
 
 </div>
 
----
-
-# 🏆 GitHub Achievements
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=sandronsk1977-creator&theme=tokyonight&no-frame=true&no-bg=true&margin-w=10&row=1"/>
-
-</div>
-
----
+--
 
 # 📊 Atividade no GitHub
 
