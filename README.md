@@ -114,18 +114,6 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" />
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" />
-
-</div>
-
----
-
 ## 🧠 O que estou estudando e praticando
 
 ```text
