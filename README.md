@@ -70,18 +70,6 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ## 🚀 Projetos em Destaque
 
-<div align="center">
-
-<a href="https://github.com/sandronsk1977-creator/portfolio">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=sandronsk1977-creator&repo=portfolio&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/sandronsk1977-creator/VLANS">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=sandronsk1977-creator&repo=VLANS&theme=tokyonight&hide_border=true" />
-</a>
-
-</div>
-
 ### 🌐 Portfolio
 
 > Projeto voltado para apresentação profissional, desenvolvimento web e organização de soluções.
