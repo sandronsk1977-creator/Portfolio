@@ -126,7 +126,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ---
 
-## 🧠 O que estou estudando
+## 🧠 O que estou estudando e praticando
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
