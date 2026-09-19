@@ -18,12 +18,6 @@
 
 </div>
 
----
-
-```text
-🚀 Transformando problemas de TI em soluções inteligentes, monitoráveis e automatizadas.
-```
-
 Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegurança e Automação**. Transformo as necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que geram resultados reais**.
 
 ## 🎓 Formação & Foco
@@ -34,7 +28,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 - 📊 **Monitoramento e Observabilidade**
 - 🌐 **Redes e Conectividade**
 - 🔐 **Cybersecurity**
-- ⚙️ **Automação e Scripts** (Python, PowerShell, Bash)
+- ⚙️ **Automação e Scripts** (Python, PowerShell, Bash e IA)
 
 ---
 
