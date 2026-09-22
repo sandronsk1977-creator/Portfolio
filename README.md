@@ -110,7 +110,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 │   🐍 Python                          📈 Progresso ████████░░ 80%│
 │   🤖 Automação com IA                📈 Progresso ██████░░░░ 60%│
 │   🔐 Cybersecurity                   📈 Progresso ███████░░░ 70%│
-│   ☁️  Cloud Computing                📈 Progresso █████░░░░░ 50%│
+│   ☁️ Cloud Computing                 📈 Progresso █████░░░░░ 50%│
 │   📊 Observabilidade                 📈 Progresso ██████░░░░ 60%│
 │   🚀 DevOps                          📈 Progresso ████░░░░░░ 40%│
 │   📋 Gestão de Projetos              📈 Progresso ███████░░░ 70%│
