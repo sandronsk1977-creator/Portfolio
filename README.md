@@ -1,13 +1,11 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0B3C5D&fontSize=52&text=Sandro%20Ferreira&theme=merko">
-  <img alt="Sandro Ferreira" src="https://capsule-render.vercel.app/api?type=waving&color=0F6CBD&fontSize=52&text=Sandro%20Ferreira&theme=default">
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1200&color=58A6FF&center=true&vCenter=true&width=640&lines=Sandro+Ferreira;Profissional+de+TI+%E2%80%A2+ITSM+%E2%80%A2+Infraestrutura;Monitoramento+%E2%80%A2+Ciberseguran%C3%A7a+%E2%80%A2+Automa%C3%A7%C3%A3o;Ensino+e+mentoria">
+  <img alt="Sandro Ferreira - Profissional de TI" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1200&color=0F6CBD&center=true&vCenter=true&width=640&lines=Sandro+Ferreira;Profissional+de+TI+%E2%80%A2+ITSM+%E2%80%A2+Infraestrutura;Monitoramento+%E2%80%A2+Ciberseguran%C3%A7a+%E2%80%A2+Automa%C3%A7%C3%A3o;Ensino+e+mentoria">
 </picture>
 
 <br>
-
-### 👨🏻‍💻 • ITSM • Infraestrutura • Monitoramento • Cybersecurity • Automação • Redes
 
 🇧🇷 Brazil
 
@@ -109,11 +107,14 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 **[🔗 Repositório](https://github.com/sandronsk1977-creator/Portfolio)** • **[🌐 Site](https://projetosdisruptivos.com.br/)**
 
 ---
+
 ### 🛡️ SF-Cyber
 
 > Projeto voltado para **Cybersecurity**, estudos, scripts e ferramentas relacionadas à segurança da informação.
 > 
 **[🔗 Ver projeto](https://github.com/sandronsk1977-creator/sf-cyber)** • **[🌐 Site](https://sfcyber.projetosdisruptivos.com.br/)**
+
+**Tecnologias:** Python • Scripts • Segurança
 
 ---
 
