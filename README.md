@@ -7,7 +7,7 @@
 
 <br>
 
-### 💼 Analista de TI • ITSM • Infraestrutura • Monitoramento • Cybersecurity
+### 👨🏻‍💻 Profissional de TI • ITSM • Infraestrutura • Monitoramento • Cybersecurity • Automação • Redes
 
 🇧🇷 Brazil
 
@@ -31,13 +31,13 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ## 🧠 O que eu faço
 
-- 🏗️ **Infraestrutura e redes** como base de tudo
-- 📋 **Processos eservice desk** com ITSM, catálogo e SLA
+- 🏗️ **Infraestrutura e Redes** como base de tudo
+- 📋 **Processos e service desk** com ITSM, catálogo e SLA com GLPI
 - 📊 **Monitoramento e observabilidade** com Zabbix e Grafana
-- ⚡ **Automação** de/scripts, rotinas e integrações
+- ⚡ **Automação** de scripts, rotinas e integrações
 - 🔐 **Cibersegurança** em ambiente corporativo
-- 🤖 **Automação aplicada à educação** (tutoria EaD)
-- 🎓 **Ensino e mentoria** em TI e redes
+- 🤖 **Automação com IA**
+- 🎓 **Ensino e mentoria** em TI e Redes
 
 ---
 
@@ -91,21 +91,6 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight">
-    <img height="170" src="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&count_private=true&include_all_commits=true&theme=default" alt="GitHub Stats">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=tokyonight">
-    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=default" alt="Top Langs">
-  </picture>
-</p>
-
----
-
 ## 🚀 Projetos em Destaque
 
 ### 🌐 Portfolio
@@ -124,7 +109,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 **Tecnologias:** HTML • CSS • JavaScript • Redes
 
-**[🔗 Ver projeto](https://github.com/sandronsk1977-creator/VLAns)**
+**[🔗 Ver projeto](https://github.com/sandronsk1977-creator/VLans)**
 
 ---
 
@@ -164,17 +149,11 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ---
 
-## 💡 Filosofia
-
-> _"TI que funciona é TI que se mede, se automatiza e evolui."_
-
----
-
 ## 📫 Vamos conversar?
 
 <div align="center">
 
-**Problemas de TI viram solutions quando existe método.** 🚀
+**Transformando Dados em Soluções.** 🚀
 
 <p>
   <a href="https://github.com/sandronsk1977-creator">
