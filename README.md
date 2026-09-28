@@ -33,27 +33,37 @@
 
 Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegurança e Automação**. Transformo as necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que geram resultados reais**.
 
+---
+
 ## 🎓 Formação & Foco
 
-- 🎓 **Graduado em Defesa Cibernética**
-- 🎓 **Pós-Graduado em Gestão de Projetos**
-- 💻 **Infraestrutura e Suporte de TI**
-- 📊 **Monitoramento e Observabilidade**
-- 🌐 **Redes e Conectividade**
-- 🔐 **Cybersecurity**
-- ⚙️ **Automação e Scripts** (Python, PowerShell, Bash e IA)
+<table>
+  <tbody>
+    <tr><td>🎓</td><td><b>Graduado em Defesa Cibernética</b></td></tr>
+    <tr><td>🎓</td><td><b>Pós-Graduado em Gestão de Projetos</b></td></tr>
+    <tr><td>💻</td><td><b>Infraestrutura e Suporte de TI</b></td></tr>
+    <tr><td>📊</td><td><b>Monitoramento e Observabilidade</b></td></tr>
+    <tr><td>🌐</td><td><b>Redes e Conectividade</b></td></tr>
+    <tr><td>🔐</td><td><b>Cybersecurity</b></td></tr>
+    <tr><td>⚙️</td><td><b>Automação e Scripts</b> (Python, PowerShell, Bash e IA)</td></tr>
+  </tbody>
+</table>
 
 ---
 
 ## 🧠 O que eu faço
 
-- 🏗️ **Infraestrutura e Redes** como base de tudo
-- 📋 **Processos e service desk** com ITSM, catálogo e SLA com GLPI
-- 📊 **Monitoramento e observabilidade** com Zabbix e Grafana
-- ⚡ **Automação** de scripts, rotinas e integrações
-- 🔐 **Cibersegurança** em ambiente corporativo
-- 🤖 **Automação com IA**
-- 🎓 **Ensino e mentoria** em TI e Redes
+<table>
+  <tbody>
+    <tr><td>🏗️</td><td><b>Infraestrutura e Redes</b> como base de tudo</td></tr>
+    <tr><td>📋</td><td><b>Processos e service desk</b> com ITSM, catálogo e SLA com GLPI</td></tr>
+    <tr><td>📊</td><td><b>Monitoramento e observabilidade</b> com Zabbix e Grafana</td></tr>
+    <tr><td>⚡</td><td><b>Automação</b> de scripts, rotinas e integrações</td></tr>
+    <tr><td>🔐</td><td><b>Cibersegurança</b> em ambiente corporativo</td></tr>
+    <tr><td>🤖</td><td><b>Automação com IA</b></td></tr>
+    <tr><td>🎓</td><td><b>Ensino e mentoria</b> em TI e Redes</td></tr>
+  </tbody>
+</table>
 
 ---
 
@@ -62,16 +72,16 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 ### 💻 Infraestrutura
 
 | Tecnologia | Área |
-|:---:|:---|
+|---|---|
 | ![Windows Server](https://img.shields.io/badge/Windows%20Server-0078D4?style=flat-square&logo=windows&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) | Servidores e Sistemas Operacionais |
 | ![Active Directory](https://img.shields.io/badge/Active%20Directory-0078D4?style=flat-square&logo=microsoft&logoColor=white) ![Hyper-V](https://img.shields.io/badge/Hyper--V-0078D4?style=flat-square&logo=microsoft&logoColor=white) | Identidade e Virtualização |
-| ![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=flat-square&logo=microsoft&logoColor=white) | Produtividade e Colaboração |
+| ![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=flat-square&logo=microsoft&logoColor=white) ![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) | Produtividade e Colaboração |
 | ![FortiGate](https://img.shields.io/badge/FortiGate-EE0000?style=flat-square&logo=fortinet&logoColor=white) | Firewall e Segurança de Perímetro |
 
 ### 📊 Monitoramento & Observabilidade
 
 | Tecnologia | Área |
-|:---:|:---|
+|---|---|
 | ![Zabbix](https://img.shields.io/badge/Zabbix-D40000?style=flat-square&logo=zabbix&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white) | Monitoramento e Dashboards |
 | ![GLPI](https://img.shields.io/badge/GLPI-0078D4?style=flat-square&logo=glpi&logoColor=white) | Gestão de Serviços e Inventário |
 | ![SNMP](https://img.shields.io/badge/SNMP-1F2937?style=flat-square) ![Observability](https://img.shields.io/badge/Observability-6C63FF?style=flat-square) | Coleta e Observabilidade |
@@ -79,7 +89,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 ### 🌐 Redes
 
 | Tecnologia | Área |
-|:---:|:---|
+|---|---|
 | ![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white) ![VLAN](https://img.shields.io/badge/VLAN-0052CC?style=flat-square) | Switching e Segmentação |
 | ![TCP/IP](https://img.shields.io/badge/TCP%2FIP-1F2937?style=flat-square) ![DNS](https://img.shields.io/badge/DNS-4285F4?style=flat-square&logo=google&logoColor=white) | Comunicação e Resolução |
 | ![DHCP](https://img.shields.io/badge/DHCP-0078D4?style=flat-square) ![Firewall](https://img.shields.io/badge/Firewall-EF4444?style=flat-square) | Distribuição e Segurança de Rede |
@@ -87,11 +97,11 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 ### ⚙️ Automação & Desenvolvimento
 
 | Tecnologia | Área |
-|:---:|:---|
+|---|---|
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | Scripts, Automação e IA |
 | ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-121011?style=flat-square&logo=gnubash&logoColor=white) | Automação de Infraestrutura |
 | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | Versionamento |
-| ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) | Desenvolvimento Web |
+| ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Desenvolvimento Web |
 
 ---
 
@@ -109,11 +119,11 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ### 🛡️ SF-Cyber
 
-> Projeto voltado para **Cybersecurity**, estudos, scripts e ferramentas relacionadas à segurança da informação. Reúne o **simulador interativo de switch Cisco para criação de VLANs**, com 6 níveis, terminal de comandos Cisco, teste de conectividade, prova final e certificado de conclusão.
+> Projeto voltado para **Cybersecurity** e **Redes**, com uma plataforma de simulação prática: switch Cisco para criação de VLANs, análise SOC, segurança web (SQLi e XSS) e servidor DNS. Cada simulador tem **8 níveis**, avaliação final e certificado de conclusão.
 
 **[🔗 Ver projeto](https://github.com/sandronsk1977-creator/sf-cyber)** • **[🌐 Site](https://sfcyber.projetosdisruptivos.com.br/)**
 
-**Tecnologias:** Python • HTML • CSS • JavaScript • Redes • Scripts • Segurança
+**Tecnologias:** React • TypeScript • Vite • HTML • CSS • JavaScript • Redes • Segurança
 
 ---
 
