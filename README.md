@@ -4,10 +4,18 @@
 
 <br>
 
-| | | | | |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/44621ac032519fe469d2afb0c1d9e83480170ddd/assets/zabbix.svg" width="38" alt="Zabbix"> | <img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/44621ac032519fe469d2afb0c1d9e83480170ddd/assets/grafana.svg" width="38" alt="Grafana"> | <img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/44621ac032519fe469d2afb0c1d9e83480170ddd/assets/fortigate.svg" width="38" alt="FortiGate"> | <img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/44621ac032519fe469d2afb0c1d9e83480170ddd/assets/azure.svg" width="38" alt="Azure"> | ![](https://img.shields.io/badge/Microsoft%20365-D83B01?style=flat-square&logo=microsoft&logoColor=white) |
-| **Zabbix** | **Grafana** | **FortiGate** | **Azure** | **Microsoft 365** |
+**Ferramentas e plataformas do dia a dia**
+
+<table>
+  <tr>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/zabbix.svg" width="42" alt="Zabbix"><br><b>Zabbix</b></td>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/grafana.svg" width="42" alt="Grafana"><br><b>Grafana</b></td>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/fortigate.svg" width="42" alt="FortiGate"><br><b>FortiGate</b></td>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/azure.svg" width="42" alt="Azure"><br><b>Azure</b></td>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/microsoft-365.svg" width="42" alt="Microsoft 365"><br><b>Microsoft 365</b></td>
+    <td align="center" width="16%"><img src="https://raw.githubusercontent.com/sandronsk1977-creator/sandronsk1977-creator/24d8c6c0eb7de7b79fd8b14f6cbd7a0c45003e3f/assets/glpi.svg" width="42" alt="GLPI"><br><b>GLPI</b></td>
+  </tr>
+</table>
 
 <br>
 
@@ -27,18 +35,6 @@
 
 Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegurança e Automação**. Transformo as necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que geram resultados reais**.
 
-## 🧠 O que eu faço
-
-- 🏗️ **Infraestrutura e Redes** como base de tudo
-- 📋 **Processos e service desk** com ITSM, catálogo e SLA com GLPI
-- 📊 **Monitoramento e observabilidade** com Zabbix e Grafana
-- ⚡ **Automação** de scripts, rotinas e integrações
-- 🔐 **Cibersegurança** em ambiente corporativo
-- 🤖 **Automação com IA**
-- 🎓 **Ensino e mentoria** em TI e Redes
-
----
-
 ## 🎓 Formação & Foco
 
 - 🎓 **Graduado em Defesa Cibernética**
@@ -48,6 +44,18 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 - 🌐 **Redes e Conectividade**
 - 🔐 **Cybersecurity**
 - ⚙️ **Automação e Scripts** (Python, PowerShell, Bash e IA)
+
+---
+
+## 🧠 O que eu faço
+
+- 🏗️ **Infraestrutura e Redes** como base de tudo
+- 📋 **Processos e service desk** com ITSM, catálogo e SLA com GLPI
+- 📊 **Monitoramento e observabilidade** com Zabbix e Grafana
+- ⚡ **Automação** de scripts, rotinas e integrações
+- 🔐 **Cibersegurança** em ambiente corporativo
+- 🤖 **Automação com IA**
+- 🎓 **Ensino e mentoria** em TI e Redes
 
 ---
 
@@ -113,7 +121,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ### 🤖 Tutoria EaD
 
-> Automação sofisticada na tutoria EaD. A infraestrutura encontra quem precisa de atenção humana e a AS interpreta o contexto do aluno, fazendo a primeira intervenção sozinha. O tutor recebe apenas os casos que exigem ação humana.
+> Automação sofisticada na Tutoria EaD. A infraestrutura encontra quem precisa de atenção humana e a AS interpreta o contexto do aluno, fazendo a primeira intervenção sozinha. O tutor recebe apenas os casos que exigem ação humana.
 
 **Painel no padrão Azure / Entra ID** • **Tecnologias:** HTML • CSS • JavaScript • Python • Automação
 
