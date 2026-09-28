@@ -1,8 +1,15 @@
 <div align="center">
 
-# 👨‍💻 Sandro Ferreira
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0B3C5D&fontSize=52&text=Sandro%20Ferreira&theme=merko">
+  <img alt="Sandro Ferreira" src="https://capsule-render.vercel.app/api?type=waving&color=0F6CBD&fontSize=52&text=Sandro%20Ferreira&theme=default">
+</picture>
+
+<br>
 
 ### 💼 Analista de TI • ITSM • Infraestrutura • Monitoramento • Cybersecurity
+
+🇧🇷 Brazil
 
 <br>
 
@@ -14,11 +21,25 @@
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=sandronsk1977-creator&label=Visitors&countColor=%23263759)
 ![Profile Views](https://komarev.com/ghpvc/?username=sandronsk1977-creator&color=00AEEF&style=flat-square)
-[![Itch](https://img.shields.io/badge/Status-Ativo%20%F0%9F%9A%80-27C93F?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Status-Ativo%20%F0%9F%9A%80-27C93F?style=flat-square)]()
 
 </div>
 
+---
+
 Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegurança e Automação**. Transformo as necessidades do dia a dia da TI em **soluções práticas, ferramentas e projetos que geram resultados reais**.
+
+## 🧠 O que eu faço
+
+- 🏗️ **Infraestrutura e redes** como base de tudo
+- 📋 **Processos eservice desk** com ITSM, catálogo e SLA
+- 📊 **Monitoramento e observabilidade** com Zabbix e Grafana
+- ⚡ **Automação** de/scripts, rotinas e integrações
+- 🔐 **Cibersegurança** em ambiente corporativo
+- 🤖 **Automação aplicada à educação** (tutoria EaD)
+- 🎓 **Ensino e mentoria** em TI e redes
+
+---
 
 ## 🎓 Formação & Foco
 
@@ -41,12 +62,14 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 | ![Windows Server](https://img.shields.io/badge/Windows%20Server-0078D4?style=flat-square&logo=windows&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) | Servidores e Sistemas Operacionais |
 | ![Active Directory](https://img.shields.io/badge/Active%20Directory-0078D4?style=flat-square&logo=microsoft&logoColor=white) ![Hyper-V](https://img.shields.io/badge/Hyper--V-0078D4?style=flat-square&logo=microsoft&logoColor=white) | Identidade e Virtualização |
 | ![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=flat-square&logo=microsoft&logoColor=white) | Produtividade e Colaboração |
+| ![FortiGate](https://img.shields.io/badge/FortiGate-EE0000?style=flat-square&logo=fortinet&logoColor=white) | Firewall e Segurança de Perímetro |
 
 ### 📊 Monitoramento & Observabilidade
 
 | Tecnologia | Área |
 |:---:|:---|
 | ![Zabbix](https://img.shields.io/badge/Zabbix-D40000?style=flat-square&logo=zabbix&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white) | Monitoramento e Dashboards |
+| ![GLPI](https://img.shields.io/badge/GLPI-0078D4?style=flat-square&logo=glpi&logoColor=white) | Gestão de Serviços e Inventário |
 | ![SNMP](https://img.shields.io/badge/SNMP-1F2937?style=flat-square) ![Observability](https://img.shields.io/badge/Observability-6C63FF?style=flat-square) | Coleta e Observabilidade |
 
 ### 🌐 Redes
@@ -62,9 +85,24 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 | Tecnologia | Área |
 |:---:|:---|
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | Scripts, Automação e IA |
-| ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-121011?style=flat-square&logo=gnubash&logoColor=white)| Automação de Infraestrutura |
+| ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-121011?style=flat-square&logo=gnubash&logoColor=white) | Automação de Infraestrutura |
 | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | Versionamento |
-| ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Desenvolvimento Web |
+| ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) | Desenvolvimento Web |
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight">
+    <img height="170" src="https://github-readme-stats.vercel.app/api?username=sandronsk1977-creator&show_icons=true&count_private=true&include_all_commits=true&theme=default" alt="GitHub Stats">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=tokyonight">
+    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandronsk1977-creator&layout=compact&langs_count=8&theme=default" alt="Top Langs">
+  </picture>
+</p>
 
 ---
 
@@ -76,6 +114,8 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 **Tecnologias:** HTML • CSS • JavaScript
 
+**[🔗 Repositório](https://github.com/sandronsk1977-creator/Portfolio)** • **[🌐 Site](https://projetosdisruptivos.com.br/)**
+
 ---
 
 ### 🔀 Simulador de VLANs
@@ -83,6 +123,8 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 > Simulador interativo para criação e representação de VLANs e cenários de redes. Facilitar o entendimento e planejamento de ambientes de rede.
 
 **Tecnologias:** HTML • CSS • JavaScript • Redes
+
+**[🔗 Ver projeto](https://github.com/sandronsk1977-creator/VLAns)**
 
 ---
 
@@ -94,29 +136,37 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 ---
 
-### 🎮 Rede Virtual
+### 🤖 Tutoria EaD
 
-> Projeto voltado para criação de **ambientes gamificados para aprendizagem**, buscando aumentar o engajamento e a participação dos alunos.
+> Automação sofisticada na tutoria EaD. A infraestrutura encontra quem precisa de atenção humana e a AS interpreta o contexto do aluno, fazendo a primeira intervenção sozinha. O tutor recebe apenas os casos que exigem ação humana.
 
-**Tecnologias:** HTML • CSS • JavaScript • Gamificação
+**Painel no padrão Azure / Entra ID** • **Tecnologias:** HTML • CSS • JavaScript • Python • Automação
+
+**[🔗 Ver projeto](https://github.com/sandronsk1977-creator/tutoria_ead)**
 
 ---
 
-## 🧠 O que estou estudando e praticando
+## 📚 O que estou estudando e praticando
 
 ```text
-┌───────────────────────────────────────────────────────────────┐
-│                                                               │
-│   🐍 Python                       📈 Progresso ████████░░ 80%│
-│   🤖 Automação com IA             📈 Progresso ██████░░░░ 60%│
-│   🔐 Cybersecurity                📈 Progresso ███████░░░ 70%│
-│   ☁️ Cloud Computing              📈 Progresso █████░░░░░ 50%│
-│   📊 Observabilidade              📈 Progresso ██████░░░░ 60%│
-│   🚀 DevOps                       📈 Progresso ████░░░░░░ 40%│
-│   📋 Gestão de Projetos           📈 Progresso ███████░░░ 70%│
-│                                                               │
-└───────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────┐
+│                                   │
+│   🐍 Python                       │
+│   🤖 Automação com IA             │
+│   🔐 Cybersecurity                │
+│   ☁️ Cloud Computing              │
+│   📊 Observabilidade              │
+│   🚀 DevOps                       │
+│   📋 Gestão de Projetos           │
+│                                   │
+└───────────────────────────────────┘
 ```
+
+---
+
+## 💡 Filosofia
+
+> _"TI que funciona é TI que se mede, se automatiza e evolui."_
 
 ---
 
@@ -124,7 +174,7 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 
 <div align="center">
 
-**TI que funciona é TI que se mede, se automatiza e evolui.** 🚀
+**Problemas de TI viram solutions quando existe método.** 🚀
 
 <p>
   <a href="https://github.com/sandronsk1977-creator">
