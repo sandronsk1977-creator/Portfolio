@@ -109,12 +109,11 @@ Sou profissional de **Tecnologia da Informação** com atuação em **ITSM, Infr
 **[🔗 Repositório](https://github.com/sandronsk1977-creator/Portfolio)** • **[🌐 Site](https://projetosdisruptivos.com.br/)**
 
 ---
-
-### 🔐 SF-Cyber
+### 🛡️ SF-Cyber
 
 > Projeto voltado para **Cybersecurity**, estudos, scripts e ferramentas relacionadas à segurança da informação.
-
-**Tecnologias:** Python • Scripts • Segurança
+> 
+**[🔗 Ver projeto](https://github.com/sandronsk1977-creator/sf-cyber)** • **[🌐 Site](https://sfcyber.projetosdisruptivos.com.br/)**
 
 ---
 
