@@ -12,10 +12,6 @@
     pointer-events: none;
     overflow: hidden;
 }
-.dc-video-carousel {
-    position: absolute;
-    inset: 0;
-}
 .dc-video {
     position: absolute;
     inset: 0;
@@ -23,11 +19,8 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0;
-    transition: opacity 1.2s ease;
     filter: saturate(0.75) contrast(1.05) brightness(0.62);
 }
-.dc-video.is-active { opacity: 1; }
 /* tinta escura: garante legibilidade do texto sobre o video */
 .dc-video-tint {
     position: absolute;
@@ -110,34 +103,12 @@ body.hero-dark footer { position: relative; z-index: 1; }
 
 body.hero-dark .sec-title { color: #eef4fc; }
 body.hero-dark .sec-desc { color: rgba(226,236,248,0.92) !important; }
-/* ---------- label da secao: texto em gradiente + linha fina pulsante ----------
-   ATENCAO: usar background-image (nao o shorthand "background"), senao o
-   background-clip:text do tema original e resetado e vira barra cheia. */
+/* label da secao: azul solido. Sem background, sem background-clip:text
+   (o gradiente com clip vira barra cheia no fundo escuro) e sem ::after. */
 body.hero-dark .sec-label {
-    display: inline-block;
-    position: relative;
-    padding-bottom: 0.65rem;
-    background-image: linear-gradient(135deg, #7fd0ff 0%, #3a8fe0 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-}
-body.hero-dark .sec-label::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    border-radius: 2px;
-    background-image: linear-gradient(90deg, #7fd0ff 0%, #3a8fe0 100%);
-    box-shadow: 0 0 8px rgba(92, 192, 255, 0.6);
-    animation: labelLinePulse 2.6s ease-in-out infinite;
-}
-@keyframes labelLinePulse {
-    0%, 100% { opacity: 0.45; box-shadow: 0 0 5px rgba(92, 192, 255, 0.35); }
-    50% { opacity: 1; box-shadow: 0 0 16px rgba(92, 192, 255, 0.95); }
+    color: #5cc0ff;
+    background: none;
+    -webkit-text-fill-color: #5cc0ff;
 }
 
 body.hero-dark .about-card,

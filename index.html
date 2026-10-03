@@ -234,10 +234,7 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #0078d4, #50a6ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #5cc0ff;
         }
         .sec-title {
             font-size: clamp(1.8rem, 4vw, 3rem);
@@ -711,11 +708,7 @@
 
     <!-- Video de fundo (fundo fixo da pagina inteira) -->
     <div class="dc-scene" aria-hidden="true">
-        <div class="dc-video-carousel">
-            <video class="dc-video is-active" src="smart.mp4" muted loop playsinline preload="auto" autoplay></video>
-            <video class="dc-video" src="smart3.mp4" muted loop playsinline preload="auto"></video>
-            <video class="dc-video" src="smart4.mp4" muted loop playsinline preload="auto"></video>
-        </div>
+        <video class="dc-video" src="smart4.mp4" autoplay muted loop playsinline preload="auto"></video>
         <div class="dc-video-tint"></div>
         <div class="dc-rift"></div>
         <div class="dc-cam">
@@ -1023,62 +1016,9 @@
         </div>
     </div>
 
-    <!-- Carrossel de videos + navegacao por secao -->
     <script>
     (function () {
         'use strict';
-
-        /* ---------- Carrossel de videos (22s cada) ---------- */
-        var CAROUSEL_MS = 22000;
-        var videos = Array.prototype.slice.call(
-            document.querySelectorAll('.dc-video-carousel .dc-video')
-        );
-        var carouselIndex = 0;
-        var carouselTimer = null;
-
-        function showVideo(i) {
-            if (!videos.length) return;
-            carouselIndex = (i + videos.length) % videos.length;
-            videos.forEach(function (v, idx) {
-                var on = idx === carouselIndex;
-                v.classList.toggle('is-active', on);
-                if (on) {
-                    var pr = v.play();
-                    if (pr && typeof pr.catch === 'function') pr.catch(function () {});
-                } else {
-                    v.pause();
-                }
-            });
-        }
-
-        function startCarousel() {
-            if (!videos.length || carouselTimer) return;
-            carouselTimer = window.setInterval(function () {
-                showVideo(carouselIndex + 1);
-            }, CAROUSEL_MS);
-        }
-
-        function stopCarousel() {
-            if (carouselTimer) {
-                window.clearInterval(carouselTimer);
-                carouselTimer = null;
-            }
-        }
-
-        if (videos.length) {
-            showVideo(0);
-            startCarousel();
-
-            // Pausa quando a aba fica oculta (economiza CPU/energia)
-            document.addEventListener('visibilitychange', function () {
-                if (document.hidden) {
-                    stopCarousel();
-                } else {
-                    showVideo(carouselIndex);
-                    startCarousel();
-                }
-            });
-        }
 
         /* ---------- Setas de secao anterior / proxima ---------- */
         var sections = Array.prototype.slice.call(
