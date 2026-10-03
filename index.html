@@ -21,6 +21,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hero-dark.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -701,7 +702,7 @@
         }
     </style>
 </head>
-<body>
+<body class="hero-dark">
 
     <canvas id="bg-canvas"></canvas>
     <div class="ambient amb-1"></div>
@@ -710,11 +711,13 @@
 
     <!-- Nav -->
     <nav id="navbar">
-        <div style="display:flex;align-items:center;gap:0.25rem;flex-wrap:wrap;justify-content:center">
+        <a href="#inicio" class="nav-brand"><span class="brand-name">Sandro</span> Ferreira</a>
+        <div class="nav-links">
             <a href="#inicio" class="nav-link">Início</a>
             <a href="#sobre" class="nav-link">Sobre</a>
             <a href="#projetos" class="nav-link">Projetos</a>
             <a href="#competencias" class="nav-link">Competências</a>
+            <a href="#contato" class="nav-cta">Contato</a>
         </div>
     </nav>
 
@@ -727,26 +730,73 @@
 
     <!-- Hero -->
     <section id="inicio">
+        <!-- HERO ESCURO (Figura 2) -->
         <div id="hero">
-            <div class="text-center max-w-5xl mx-auto" style="z-index:2;position:relative">
-                <div class="reveal"><span class="hero-badge"><i class="fas fa-bolt" style="margin-right:6px"></i>Portfólio Profissional</span></div>
-                <h1 class="hero-title reveal" style="transition-delay:0.1s">
-                <span class="line2">Sandro Ferreira</span>
+            <div class="hero-globe" aria-hidden="true">
+                <div class="globe-halo"></div>
+                <svg viewBox="0 0 600 600" role="presentation">
+                    <defs>
+                        <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#1f7ad4" stop-opacity=".28"/>
+                            <stop offset="100%" stop-color="#1f7ad4" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <circle cx="300" cy="300" r="272" fill="url(#gCore)"/>
+                    <g class="globe-arc">
+                        <circle cx="300" cy="300" r="272"/>
+                        <circle cx="300" cy="300" r="228"/>
+                        <circle cx="300" cy="300" r="184"/>
+                        <circle cx="300" cy="300" r="140"/>
+                        <circle cx="300" cy="300" r="96"/>
+                        <circle cx="300" cy="300" r="52"/>
+                        <ellipse cx="300" cy="300" rx="272" ry="110"/>
+                        <ellipse cx="300" cy="300" rx="272" ry="200"/>
+                        <ellipse cx="300" cy="300" rx="110" ry="272"/>
+                        <ellipse cx="300" cy="300" rx="200" ry="272"/>
+                        <ellipse cx="300" cy="300" rx="52" ry="272"/>
+                    </g>
+                    <g class="globe-arc" opacity=".5">
+                        <path d="M28 300 H572"/>
+                        <path d="M72 190 C170 214 430 214 528 190"/>
+                        <path d="M72 410 C170 386 430 386 528 410"/>
+                    </g>
+                    <g class="globe-link">
+                        <path d="M150 190 L262 268 L392 214 L470 320"/>
+                        <path d="M118 344 L262 268 L330 400"/>
+                        <path d="M262 268 L470 320 L510 430"/>
+                    </g>
+                    <g class="globe-dot">
+                        <circle cx="150" cy="190" r="3.6"/><circle cx="262" cy="268" r="4.4"/>
+                        <circle cx="392" cy="214" r="3.2"/><circle cx="470" cy="320" r="4.2"/>
+                        <circle cx="118" cy="344" r="3"/><circle cx="330" cy="400" r="3.6"/>
+                        <circle cx="510" cy="430" r="3"/><circle cx="210" cy="452" r="3.2"/>
+                        <circle cx="430" cy="120" r="3"/><circle cx="96"  cy="250" r="2.8"/>
+                        <circle cx="366" cy="500" r="3.2"/><circle cx="520" cy="212" r="2.8"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="hero-dark-inner">
+                <span class="hero-dark-eyebrow">Portfólio Profissional</span>
+                <h1 class="hero-dark-title">
+                    Sandro <span class="accent">Ferreira</span>
                 </h1>
-                <div class="hero-meta reveal" style="transition-delay:0.2s;margin-top:2rem">
-                    <span><i class="fas fa-circle"></i> Monitoramento</span>
-                    <span><i class="fas fa-circle"></i> Infraestrutura</span>
-                    <span><i class="fas fa-circle"></i> Redes</span>
-                    <span><i class="fas fa-circle"></i> Segurança</span>
-                    <span><i class="fas fa-circle"></i> Automação</span>
-                </div>
-                <div class="reveal" style="transition-delay:0.3s">
-                    <p style="color:rgba(50,49,48,0.6);font-size:0.95rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">
-                        Transformando Dados em Soluções<br>                    </p>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center">
-                        <a href="#projetos" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
-                        <a href="#competencias" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
-                    </div>
+                <p class="hero-dark-lead">
+                    Infraestrutura, monitoramento e automação para ambientes mais
+                    seguros, estáveis e eficientes.
+                </p>
+
+                <ul class="hero-dark-skills">
+                    <li><i class="fas fa-chart-bar"></i> Monitoramento</li>
+                    <li><i class="fas fa-server"></i> Infraestrutura</li>
+                    <li><i class="fas fa-project-diagram"></i> Redes</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança</li>
+                    <li><i class="fas fa-cog"></i> Automação</li>
+                </ul>
+
+                <div class="hero-dark-cta">
+                    <a href="#projetos" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+                    <a href="#competencias" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
                 </div>
             </div>
         </div>
@@ -919,7 +969,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contato">
         <div style="max-width:30rem;margin:0 auto">
             <p style="font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;color:#201f1e">Developed By Sandro Ferreira</p>
             <p style="color:rgba(50,49,48,0.6);font-size:0.9rem;margin-bottom:2rem">Transformando dados em soluções.</p>
