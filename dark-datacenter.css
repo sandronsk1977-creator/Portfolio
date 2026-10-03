@@ -49,38 +49,23 @@
     left: 0; right: 0; top: 0;
     height: 20%;
 }
-.dc-tray {
-    position: absolute;
-    top: 6%; left: 0; right: 0;
-    height: 26px;
-    background:
-        repeating-linear-gradient(90deg,
-            rgba(120,180,240,0.30) 0 2px,
-            transparent 2px 9px),
-        linear-gradient(180deg, #0d1828, #08111e);
-    border-top: 1px solid rgba(140,200,255,0.22);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
-    opacity: 0.75;
-}
+/* --- luminarias: apenas brilho difuso, sem barra solida --- */
 .dc-light {
     position: absolute;
-    top: 2%;
-    width: 24%;
-    height: 5px;
-    border-radius: 3px;
-    background: #cfe9ff;
-    box-shadow:
-        0 0 12px rgba(160,220,255,0.9),
-        0 0 34px rgba(90,180,255,0.55),
-        0 26px 70px rgba(80,170,255,0.30);
+    top: 3%;
+    width: 22%;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(180,225,255,0.55), transparent 70%);
+    filter: blur(18px);
     animation: dcLight 7s ease-in-out infinite;
 }
-.dc-light.l1 { left: 10%; }
-.dc-light.l2 { right: 12%; animation-delay: 2.6s; }
-.dc-light.l3 { left: 42%; width: 16%; animation-delay: 4.4s; }
+.dc-light.l1 { left: 12%; }
+.dc-light.l2 { right: 14%; animation-delay: 2.6s; }
+.dc-light.l3 { left: 44%; width: 14%; animation-delay: 4.4s; }
 @keyframes dcLight {
-    0%, 100% { opacity: 0.88; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 0.85; }
 }
 
 /* --- fileiras de racks --- */

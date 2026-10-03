@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hero-dark.css">
     <link rel="stylesheet" href="dark-datacenter.css">
+    <link rel="stylesheet" href="matrix-rain.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -712,13 +713,13 @@
 
     <!-- Datacenter animado (fundo fixo da pagina inteira) -->
     <div class="dc-scene" aria-hidden="true">
+        <canvas id="matrix-canvas"></canvas>
         <div class="dc-cam">
             <div class="dc-haze a"></div>
             <div class="dc-haze b"></div>
             <div class="dc-haze c"></div>
 
             <div class="dc-ceiling">
-                <div class="dc-tray"></div>
                 <div class="dc-light l1"></div>
                 <div class="dc-light l2"></div>
                 <div class="dc-light l3"></div>
@@ -818,8 +819,7 @@
                     Sandro <span class="accent">Ferreira</span>
                 </h1>
                 <p class="hero-dark-lead">
-                    Infraestrutura, monitoramento e automação para ambientes mais
-                    seguros, estáveis e eficientes.
+                    Transformando Dados em Soluções
                 </p>
 
                 <ul class="hero-dark-skills">
@@ -1021,6 +1021,96 @@
             <p id="modalCap" class="cap"></p>
         </div>
     </div>
+
+    <!-- Chuva Matrix (fundo) -->
+    <script>
+        (function () {
+            var canvas = document.getElementById('matrix-canvas');
+            if (!canvas) return;
+
+            var ctx = canvas.getContext('2d', { alpha: true });
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var FONT = 14;
+            var COLORS = ['#35a0f5', '#4aa9ff', '#5cc0ff', '#7fd0ff'];
+            var GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>/\\[]{}=+-*#$%&@';
+
+            var columns = 0;
+            var drops = [];
+            var frame = 0;
+            var running = true;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                var size = FONT;
+                columns = Math.ceil(canvas.width / size);
+                drops = [];
+                for (var i = 0; i < columns; i++) {
+                    drops[i] = Math.random() * -60;
+                }
+            }
+
+            function draw() {
+                if (!running) return;
+                frame++;
+
+                // rastro semi-transparente (efeito de rastro do Matrix)
+                ctx.fillStyle = 'rgba(3, 7, 14, 0.085)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = FONT + 'px monospace';
+                ctx.textBaseline = 'top';
+
+                for (var i = 0; i < columns; i++) {
+                    var ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+                    var y = drops[i] * FONT;
+
+                    // cabecalho mais brilhante
+                    ctx.fillStyle = '#d8f2ff';
+                    ctx.shadowColor = '#7fd0ff';
+                    ctx.shadowBlur = 8;
+                    ctx.fillText(ch, i * FONT, y);
+
+                    // corpo em ciano
+                    ctx.shadowBlur = 4;
+                    ctx.fillStyle = COLORS[Math.floor(Math.random() * COLORS.length)];
+                    ctx.fillText(ch, i * FONT, y - FONT);
+
+                    ctx.shadowBlur = 0;
+
+                    // velocidade variando por coluna
+                    if (y > canvas.height && Math.random() > 0.975) {
+                        drops[i] = Math.random() * -40;
+                    }
+                    drops[i] += 0.42 + Math.random() * 0.5;
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            // pausa quando a aba nao esta visivel (economiza CPU)
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    running = false;
+                } else if (!reduce) {
+                    running = true;
+                    requestAnimationFrame(draw);
+                }
+            });
+
+            resize();
+            window.addEventListener('resize', resize);
+
+            if (reduce) {
+                // sem animacao: desenha um frame estatico e pronto
+                draw();
+                running = false;
+            } else {
+                requestAnimationFrame(draw);
+            }
+        })();
+    </script>
 
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

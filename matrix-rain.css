@@ -1,0 +1,16 @@
+/* ============================================================
+   CHUVA MATRIX (canvas) — fundo do datacenter
+   ============================================================ */
+#matrix-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.34;
+    mix-blend-mode: screen;
+}
+
+/* matrix tem que ficar atras dos racks e do floor */
+#matrix-canvas ~ .dc-cam { position: relative; z-index: 1; }
