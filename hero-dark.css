@@ -60,30 +60,28 @@ body.hero-dark .nav-link.active {
     background: rgba(53,160,245,0.12);
 }
 
-/* --- layout do hero --- */
+/* --- layout do hero (centralizado) --- */
 body.hero-dark #hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 7rem 3rem 5rem;
-    max-width: 1240px;
-    margin: 0 auto;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 1.5rem 5rem;
 }
 
-/* --- Globo de pontos --- */
+/* --- Globo de pontos (decoracao, ao fundo) --- */
 .hero-globe {
     position: absolute;
-    right: -6vw;
-    top: 46%;
+    right: -10vw;
+    top: 50%;
     transform: translateY(-50%);
-    width: min(760px, 62vw);
+    width: min(820px, 68vw);
     aspect-ratio: 1;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.95;
+    opacity: 0.42;
 }
 .hero-globe svg { width: 100%; height: 100%; display: block; }
 .globe-dot { fill: #35a0f5; }
@@ -113,7 +111,14 @@ body.hero-dark #hero {
 }
 
 /* --- conteudo --- */
-.hero-dark-inner { position: relative; z-index: 2; }
+.hero-dark-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 46rem;
+}
 .hero-dark-eyebrow {
     font-size: 0.8rem;
     font-weight: 600;
@@ -136,7 +141,7 @@ body.hero-dark #hero {
     -webkit-text-fill-color: transparent;
 }
 .hero-dark-lead {
-    margin: 1.15rem 0 0;
+    margin: 1.15rem auto 0;
     max-width: 32rem;
     font-size: 1.02rem;
     line-height: 1.55;
@@ -146,6 +151,7 @@ body.hero-dark #hero {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem 1.4rem;
     margin: 1.9rem 0 0;
     padding: 0;
@@ -175,6 +181,7 @@ body.hero-dark #hero {
 .hero-dark-cta {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.8rem;
     margin: 2.1rem 0 0;
 }
@@ -210,17 +217,14 @@ body.hero-dark .social-rail { z-index: 60; }
 body.hero-dark ::-webkit-scrollbar-track { background: #071124; }
 
 @media (max-width: 1024px) {
-    body.hero-dark #hero {
-        grid-template-columns: 1fr;
-        padding: 6.5rem 1.5rem 4rem;
-    }
-    .hero-globe { right: -24vw; width: 96vw; opacity: 0.38; }
+    .hero-globe { right: -26vw; width: 100vw; opacity: 0.3; }
 }
 @media (max-width: 640px) {
     body.hero-dark nav { padding: 0.85rem 1.1rem; }
     body.hero-dark .nav-link { padding: 0.35rem 0.6rem; font-size: 0.78rem; }
     body.hero-dark .nav-brand { font-size: 1rem; }
     body.hero-dark .nav-cta { padding: 0.5rem 1rem; font-size: 0.78rem; margin-left: 0.2rem; }
+    body.hero-dark #hero { padding: 7rem 1.1rem 4rem; }
     .hero-dark-cta > * { flex: 1 1 100%; justify-content: center; text-align: center; }
     .hero-dark-skills { gap: 0.5rem 0.9rem; }
     .hero-dark-skills li + li { padding-left: 0.9rem; }
