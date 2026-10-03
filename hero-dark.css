@@ -3,13 +3,11 @@
    O restante do site permanece claro, com fade na transicao.
    ============================================================ */
 
-/* --- fundo escuro da secao do hero, com fade para o claro --- */
+/* --- fundo da secao do hero: transparente, deixa o datacenter aparecer --- */
 body.hero-dark #inicio {
     position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(110% 78% at 74% 44%, rgba(16,72,150,0.40), transparent 62%),
-        linear-gradient(180deg, #071124 0%, #050b18 72%, #fafbfc 100%);
+    overflow-x: hidden;
+    background: transparent;
 }
 
 /* --- navbar escura --- */

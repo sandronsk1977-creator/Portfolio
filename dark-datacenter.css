@@ -1,0 +1,272 @@
+/* ============================================================
+   TEMA ESCURO GLOBAL + DATACENTER ANIMADO
+   Carregado depois do <style> principal, entao sobrescreve por cascata.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+   1. DATACENTER DE FUNDO (fixo, atras de tudo)
+   --------------------------------------------------------- */
+.dc-scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+        radial-gradient(120% 85% at 70% 0%, rgba(20,86,170,0.30), transparent 58%),
+        linear-gradient(180deg, #071124 0%, #050b18 45%, #04080f 100%);
+}
+
+/* piso em perspectiva */
+.dc-scene .dc-floor {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(70,170,255,0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70,170,255,0.13) 1px, transparent 1px);
+    background-size: 64px 64px;
+    transform: perspective(620px) rotateX(64deg) scale(2.4) translateY(18%);
+    transform-origin: center bottom;
+    -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 55%);
+    mask-image: linear-gradient(180deg, transparent 4%, #000 55%);
+}
+
+/* brilho ambiente */
+.dc-scene .dc-amb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(96px);
+}
+.dc-scene .dc-amb.a {
+    width: 560px; height: 560px;
+    top: -8%; right: -6%;
+    background: radial-gradient(circle, rgba(35,120,230,0.28), transparent 70%);
+    animation: dcDrift 18s ease-in-out infinite;
+}
+.dc-scene .dc-amb.b {
+    width: 460px; height: 460px;
+    bottom: -12%; left: -8%;
+    background: radial-gradient(circle, rgba(20,90,190,0.20), transparent 70%);
+    animation: dcDrift 24s ease-in-out infinite reverse;
+}
+@keyframes dcDrift {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(46px,-40px) scale(1.08); }
+    66% { transform: translate(-34px,32px) scale(0.95); }
+}
+
+/* corredor de racks */
+.dc-rack {
+    position: absolute;
+    top: 20%;
+    width: 108px;
+    height: 58%;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #16233a 0%, #0e1728 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(90,170,255,0.12),
+        0 24px 60px rgba(0,0,0,0.5);
+}
+.dc-rack::before {
+    /* faixa de LEDs superior */
+    content: "";
+    position: absolute;
+    top: 9px; left: 8px; right: 8px;
+    height: 4px;
+    border-radius: 2px;
+    background: #47c3ff;
+    box-shadow: 0 0 10px rgba(71,195,255,0.85);
+    animation: rackLed 2.4s ease-in-out infinite;
+}
+.dc-rack::after {
+    /* unidades de equipment empilhadas */
+    content: "";
+    position: absolute;
+    inset: 22px 8px 10px;
+    border-radius: 4px;
+    background:
+        repeating-linear-gradient(180deg,
+            rgba(120,190,255,0.80) 0 3px,
+            transparent 3px 6px,
+            rgba(120,190,255,0.55) 6px 9px,
+            transparent 9px 19px);
+    -webkit-mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+    animation: rackBlink 3.2s steps(1) infinite;
+}
+@keyframes rackLed {
+    0%,100% { opacity: 0.55; }
+    50% { opacity: 1; }
+}
+@keyframes rackBlink {
+    0%, 88%, 100% { opacity: 0.9; }
+    90% { opacity: 0.25; }
+    93% { opacity: 0.9; }
+}
+.dc-rack.r1 { right: 2%;  transform: scale(1.10); opacity: 0.95; }
+.dc-rack.r2 { right: 15%; transform: scale(0.96); top: 23%; opacity: 0.72; }
+.dc-rack.r3 { right: 26%; transform: scale(0.84); top: 27%; opacity: 0.50; }
+.dc-rack.l1 { left: 1%;   transform: scale(0.90); top: 25%; opacity: 0.40; }
+.dc-rack.l2 { left: 12%;  transform: scale(0.74); top: 30%; opacity: 0.26; }
+
+@media (max-width: 900px) {
+    .dc-rack { opacity: 0.28; }
+    .dc-rack.l1, .dc-rack.l2 { display: none; }
+}
+
+/* ---------------------------------------------------------
+   2. ICONES PULSANTES
+   --------------------------------------------------------- */
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(71,195,255,0.42), 0 0 0 0 rgba(53,160,245,0.28);
+    }
+    50% {
+        transform: scale(1.07);
+        box-shadow: 0 0 0 10px rgba(71,195,255,0.00), 0 0 0 20px rgba(53,160,245,0.00);
+    }
+}
+@keyframes iconGlow {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(71,195,255,0.55)); }
+    50% { filter: drop-shadow(0 0 12px rgba(71,195,255,1)); }
+}
+
+/* social rail */
+body.hero-dark .social {
+    background: rgba(12,26,48,0.82) !important;
+    border: 1px solid rgba(71,195,255,0.38) !important;
+    color: #5cc0ff !important;
+    animation: iconPulse 2.6s ease-in-out infinite, iconGlow 2.6s ease-in-out infinite;
+}
+body.hero-dark .social:nth-child(2) { animation-delay: 0.45s; }
+body.hero-dark .social:nth-child(3) { animation-delay: 0.9s; }
+
+/* skills do hero */
+body.hero-dark .hero-dark-skills i {
+    animation: iconGlow 2.8s ease-in-out infinite;
+    display: inline-block;
+}
+body.hero-dark .hero-dark-skills li:nth-child(2) i { animation-delay: 0.35s; }
+body.hero-dark .hero-dark-skills li:nth-child(3) i { animation-delay: 0.7s; }
+body.hero-dark .hero-dark-skills li:nth-child(4) i { animation-delay: 1.05s; }
+body.hero-dark .hero-dark-skills li:nth-child(5) i { animation-delay: 1.4s; }
+
+/* icones dentro dos cards */
+body.hero-dark .skill-icon,
+body.hero-dark .about-card h3 i,
+body.hero-dark .highlight-item i {
+    animation: iconGlow 3s ease-in-out infinite;
+    display: inline-block;
+}
+body.hero-dark .about-card:nth-of-type(2) h3 i { animation-delay: 0.4s; }
+body.hero-dark .about-card:nth-of-type(3) h3 i { animation-delay: 0.8s; }
+body.hero-dark .highlight-item:nth-child(2) i { animation-delay: 0.35s; }
+body.hero-dark .highlight-item:nth-child(3) i { animation-delay: 0.7s; }
+body.hero-dark .highlight-item:nth-child(4) i { animation-delay: 1.05s; }
+
+/* ---------------------------------------------------------
+   3. TEMA ESCURO GLOBAL
+   --------------------------------------------------------- */
+body.hero-dark {
+    background: #050b18 !important;
+    color: #dbe7f5 !important;
+}
+
+/* o datacenter precisa ficar acima do body, abaixo do conteudo */
+body.hero-dark #bg-canvas,
+body.hero-dark .ambient { display: none; }
+
+body.hero-dark section,
+body.hero-dark footer { position: relative; z-index: 1; }
+
+body.hero-dark .sec-title { color: #eef4fc; }
+body.hero-dark .sec-label { background: linear-gradient(135deg, #5cc0ff, #3a8fe0); }
+
+/* cards -> vidro escuro */
+body.hero-dark .about-card,
+body.hero-dark .project-card,
+body.hero-dark .highlight-item,
+body.hero-dark .skill-item,
+body.hero-dark .proj3-grid > div {
+    background: rgba(14,27,48,0.82) !important;
+    border: 1px solid rgba(90,170,255,0.16) !important;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.42) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+body.hero-dark .about-card:hover,
+body.hero-dark .project-card:hover,
+body.hero-dark .skill-item:hover {
+    border-color: rgba(71,195,255,0.42) !important;
+    box-shadow: 0 14px 44px rgba(0,0,0,0.55) !important;
+}
+
+/* textos dentro dos cards */
+body.hero-dark .about-card h3,
+body.hero-dark .highlight-item h3,
+body.hero-dark .highlight-item h4,
+body.hero-dark .skill-item h4,
+body.hero-dark .proj3-grid h4 { color: #eaf2fb !important; }
+body.hero-dark .about-card p,
+body.hero-dark .highlight-item p,
+body.hero-dark .skill-item p,
+body.hero-dark .proj3-grid p { color: rgba(219,231,245,0.72) !important; }
+body.hero-dark .about-card li,
+body.hero-dark .highlight-item li { color: rgba(219,231,245,0.80) !important; }
+body.hero-dark .about-card li::marker,
+body.hero-dark .highlight-item li::marker { color: #35a0f5; }
+
+/* miniaturas de projeto */
+body.hero-dark .project-thumbs,
+body.hero-dark .proj3-imgs {
+    background: rgba(10,20,38,0.7) !important;
+    border-color: rgba(90,170,255,0.14) !important;
+}
+
+/* botao secundario e chips */
+body.hero-dark .btn-secondary {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1.5px solid #35a0f5 !important;
+    color: #eaf2fb !important;
+}
+body.hero-dark .btn-secondary:hover { background: rgba(53,160,245,0.14) !important; }
+
+/* perfil com moldura giratoria */
+body.hero-dark .profile-wrap::after { background: #071124; }
+body.hero-dark .profile-wrap { box-shadow: 0 0 0 2px rgba(71,195,255,0.25); }
+
+/* rodape */
+body.hero-dark footer {
+    background: rgba(8,18,34,0.86) !important;
+    border-top: 1px solid rgba(90,170,255,0.14) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+body.hero-dark footer p { color: rgba(219,231,245,0.62) !important; }
+body.hero-dark footer p:first-child { color: #eef4fc !important; }
+
+/* textos com inline style (forcado) */
+body.hero-dark #projetos p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.68) !important; }
+body.hero-dark footer p[style*="#201f1e"] { color: #eef4fc !important; }
+body.hero-dark footer p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.62) !important; }
+
+/* modal de imagem */
+body.hero-dark .modal {
+    background: rgba(3,8,18,0.92) !important;
+}
+body.hero-dark .modal .close { color: #dbe7f5 !important; }
+
+/* barra de rolagem */
+body.hero-dark ::-webkit-scrollbar-track { background: #071124; }
+body.hero-dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #35a0f5, #1f6fc4);
+    border-radius: 9999px;
+    border: 2px solid #071124;
+}
+body.hero-dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5cc0ff, #2f86e0);
+}
+
+/* modal aberto: trava scroll como antes */
+body.hero-dark.modal-open { overflow: hidden; }
