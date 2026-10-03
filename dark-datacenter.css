@@ -348,7 +348,6 @@ body.hero-dark .profile-wrap { box-shadow: 0 0 0 2px rgba(71,195,255,0.25); }
 
 body.hero-dark footer {
     background: rgba(8,18,34,0.86) !important;
-    border-top: 1px solid rgba(90,170,255,0.14) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -377,18 +376,18 @@ body.hero-dark .project-info ul li {
     border: 1px solid rgba(71,195,255,0.28) !important;
     color: rgba(232,241,252,0.92) !important;
 }
-/* <strong style="color:#0078d4"> inline nos <li> */
+/* <strong> inline nos <li>: vira titulo em linha propria */
 body.hero-dark .project-info ul li strong,
 body.hero-dark .project-info strong {
+    display: block;
     color: #6cc6ff !important;
+    margin-bottom: 2px;
 }
 /* conteudo dos chips que nao tem strong */
 body.hero-dark .project-info ul li { color: rgba(226,236,248,0.92) !important; }
 
-/* divisor */
-body.hero-dark .project-divider {
-    background: linear-gradient(90deg, transparent, rgba(71,195,255,0.35), transparent) !important;
-}
+/* divisor entre projetos: removido */
+body.hero-dark .project-divider { display: none !important; }
 
 /* area da imagem / zoom */
 body.hero-dark .project-visual {
