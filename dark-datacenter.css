@@ -19,7 +19,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: saturate(0.95) contrast(1.02) brightness(1.02);
+    filter: saturate(1.05) contrast(1.02) brightness(1.15);
 }
 /* tinta escura: garante legibilidade do texto sobre o video */
 .dc-video-tint {
@@ -28,8 +28,8 @@
     z-index: 1;
     pointer-events: none;
     background:
-        radial-gradient(120% 90% at 50% 40%, rgba(2, 12, 6, 0.18), transparent 62%),
-        linear-gradient(180deg, rgba(3, 10, 6, 0.42) 0%, rgba(2, 7, 4, 0.28) 50%, rgba(2, 6, 3, 0.52) 100%);
+        radial-gradient(120% 90% at 50% 40%, rgba(2, 12, 6, 0.08), transparent 62%),
+        linear-gradient(180deg, rgba(3, 10, 6, 0.26) 0%, rgba(2, 7, 4, 0.16) 50%, rgba(2, 6, 3, 0.34) 100%);
 }
 /* vinheta: escurece as bordas */
 .dc-vignette {
@@ -37,7 +37,7 @@
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background: radial-gradient(ellipse 78% 88% at 50% 50%, transparent 55%, rgba(2, 6, 4, 0.62) 100%);
+    background: radial-gradient(ellipse 84% 94% at 50% 50%, transparent 66%, rgba(2, 6, 4, 0.42) 100%);
 }
 
    2. ICONES PULSANTES
@@ -109,6 +109,18 @@ body.hero-dark .sec-label {
     color: #5cc0ff;
     background: none;
     -webkit-text-fill-color: #5cc0ff;
+}
+
+/* protecao de texto sobre o video de fundo: como a tinta foi reduzida para
+   deixar o video mais visivel, o texto que nao tem card precisa de sombra
+   propria para manter o contraste sem escurecer o fundo. */
+body.hero-dark .sec-label,
+body.hero-dark .sec-title,
+body.hero-dark .sec-desc,
+body.hero-dark .hero-dark-eyebrow,
+body.hero-dark .hero-dark-lead,
+body.hero-dark .hero-dark-skills li {
+    text-shadow: 0 2px 14px rgba(2, 8, 4, 0.88), 0 1px 3px rgba(2, 8, 4, 0.72);
 }
 
 body.hero-dark .about-card,
