@@ -295,6 +295,7 @@ body.hero-dark section,
 body.hero-dark footer { position: relative; z-index: 1; }
 
 body.hero-dark .sec-title { color: #eef4fc; }
+body.hero-dark .sec-desc { color: rgba(219,231,245,0.72) !important; }
 body.hero-dark .sec-label { background: linear-gradient(135deg, #5cc0ff, #3a8fe0); }
 
 body.hero-dark .about-card,
@@ -358,6 +359,52 @@ body.hero-dark #projetos p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.6
 body.hero-dark footer p[style*="#201f1e"] { color: #eef4fc !important; }
 body.hero-dark footer p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.62) !important; }
 
+/* ---------- PROJETOS (cards + listas) ---------- */
+body.hero-dark .project-info h3 {
+    /* o gradiente original usa text-fill transparent e some no fundo escuro */
+    background: linear-gradient(135deg, #7fd0ff 0%, #3a9be8 100%);
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+body.hero-dark .project-info p {
+    color: rgba(219,231,245,0.76) !important;
+}
+body.hero-dark .project-info ul li {
+    background: rgba(53,160,245,0.14) !important;
+    border: 1px solid rgba(71,195,255,0.28) !important;
+    color: rgba(232,241,252,0.92) !important;
+}
+/* <strong style="color:#0078d4"> inline nos <li> */
+body.hero-dark .project-info ul li strong,
+body.hero-dark .project-info strong {
+    color: #6cc6ff !important;
+}
+/* conteudo dos chips que nao tem strong */
+body.hero-dark .project-info ul li { color: rgba(219,231,245,0.80) !important; }
+
+/* divisor */
+body.hero-dark .project-divider {
+    background: linear-gradient(90deg, transparent, rgba(71,195,255,0.35), transparent) !important;
+}
+
+/* area da imagem / zoom */
+body.hero-dark .project-visual {
+    background: rgba(10,20,38,0.75) !important;
+    border: 1px solid rgba(90,170,255,0.16) !important;
+}
+body.hero-dark .project-visual .zoom {
+    background: rgba(5,11,24,0.85) !important;
+    color: #5cc0ff !important;
+}
+
+/* proj3 (grid de projetos) */
+body.hero-dark .proj3-grid h4 { color: #eaf2fb !important; }
+body.hero-dark .proj3-grid p { color: rgba(219,231,245,0.72) !important; }
+body.hero-dark .proj3-imgs { background: rgba(10,20,38,0.7) !important; }
+
+/* modal */
 body.hero-dark .modal { background: rgba(3,8,18,0.92) !important; }
 body.hero-dark .modal .close { color: #dbe7f5 !important; }
 
