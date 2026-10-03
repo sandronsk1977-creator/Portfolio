@@ -19,7 +19,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: saturate(0.75) contrast(1.05) brightness(0.62);
+    filter: saturate(0.95) contrast(1.02) brightness(1.02);
 }
 /* tinta escura: garante legibilidade do texto sobre o video */
 .dc-video-tint {
@@ -28,8 +28,8 @@
     z-index: 1;
     pointer-events: none;
     background:
-        radial-gradient(120% 90% at 50% 40%, rgba(2, 12, 6, 0.55), transparent 62%),
-        linear-gradient(180deg, rgba(3, 10, 6, 0.86) 0%, rgba(2, 7, 4, 0.72) 50%, rgba(2, 6, 3, 0.92) 100%);
+        radial-gradient(120% 90% at 50% 40%, rgba(2, 12, 6, 0.18), transparent 62%),
+        linear-gradient(180deg, rgba(3, 10, 6, 0.42) 0%, rgba(2, 7, 4, 0.28) 50%, rgba(2, 6, 3, 0.52) 100%);
 }
 /* vinheta: escurece as bordas */
 .dc-vignette {
@@ -37,7 +37,7 @@
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 45%, rgba(2, 6, 4, 0.85) 100%);
+    background: radial-gradient(ellipse 78% 88% at 50% 50%, transparent 55%, rgba(2, 6, 4, 0.62) 100%);
 }
 
    2. ICONES PULSANTES
