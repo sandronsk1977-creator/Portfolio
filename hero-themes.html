@@ -1,0 +1,121 @@
+<!-- ============================================================
+     HERO FIGURA 1 — tema claro (navbar + card lateral + datacenter)
+     Ative adicionando a classe "hero-light" no <body>.
+     ============================================================ -->
+<style>
+    html:not(.hero-preview) #hero-fig1,
+    html:not(.hero-preview) #hero-fig2 { display: none; }
+    html:not(.hero-preview) #hero-original { display: block; }
+    html.hero-preview #hero-fig1,
+    html.hero-preview #hero-fig2,
+    html.hero-preview #hero-original { display: none; }
+    html.hero-preview #hero-fig1.on,
+    html.hero-preview #hero-fig2.on { display: grid; }
+</style>
+
+<!-- ================= FIGURA 1 — CLARO ================= -->
+<section id="hero-fig1">
+    <div class="hero-dc" aria-hidden="true">
+        <div class="hero-dc-grid"></div>
+        <div class="hero-dc-glow"></div>
+        <div class="hero-dc-rack r1"></div>
+        <div class="hero-dc-rack r2"></div>
+        <div class="hero-dc-rack r3"></div>
+    </div>
+
+    <div class="hero-light-card reveal">
+        <span class="hero-light-eyebrow">Portfólio Profissional</span>
+        <h1 class="hero-light-title">
+            <span class="accent">Sandro</span> Ferreira
+        </h1>
+        <p class="hero-light-lead">
+            Transformando infraestrutura em soluções. Monitoramento, redes,
+            segurança e automação para ambientes de alta disponibilidade.
+        </p>
+
+        <div class="hero-light-skills">
+            <div class="skill-tile"><i class="fas fa-chart-bar"></i><span>Monitoramento</span></div>
+            <div class="skill-tile"><i class="fas fa-server"></i><span>Infraestrutura</span></div>
+            <div class="skill-tile"><i class="fas fa-project-diagram"></i><span>Redes</span></div>
+            <div class="skill-tile"><i class="fas fa-shield-alt"></i><span>Segurança</span></div>
+            <div class="skill-tile"><i class="fas fa-cog"></i><span>Automação</span></div>
+        </div>
+
+        <div class="hero-light-cta">
+            <a href="#projetos" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+            <a href="#competencias" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FIGURA 2 — ESCURO ================= -->
+<section id="hero-fig2">
+    <div class="hero-dark-bg" aria-hidden="true"></div>
+    <div class="hero-globe" aria-hidden="true">
+        <div class="globe-halo"></div>
+        <svg viewBox="0 0 600 600" role="presentation">
+            <defs>
+                <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1f7ad4" stop-opacity=".28"/>
+                    <stop offset="100%" stop-color="#1f7ad4" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="300" cy="300" r="272" fill="url(#gCore)"/>
+            <g class="globe-arc">
+                <circle cx="300" cy="300" r="272"/>
+                <circle cx="300" cy="300" r="228"/>
+                <circle cx="300" cy="300" r="184"/>
+                <circle cx="300" cy="300" r="140"/>
+                <circle cx="300" cy="300" r="96"/>
+                <circle cx="300" cy="300" r="52"/>
+                <ellipse cx="300" cy="300" rx="272" ry="110"/>
+                <ellipse cx="300" cy="300" rx="272" ry="200"/>
+                <ellipse cx="300" cy="300" rx="110" ry="272"/>
+                <ellipse cx="300" cy="300" rx="200" ry="272"/>
+                <ellipse cx="300" cy="300" rx="52" ry="272"/>
+            </g>
+            <g class="globe-arc" opacity=".5">
+                <path d="M28 300 H572"/>
+                <path d="M72 190 C170 214 430 214 528 190"/>
+                <path d="M72 410 C170 386 430 386 528 410"/>
+            </g>
+            <g class="globe-link">
+                <path d="M150 190 L262 268 L392 214 L470 320"/>
+                <path d="M118 344 L262 268 L330 400"/>
+                <path d="M262 268 L470 320 L510 430"/>
+            </g>
+            <g class="globe-dot">
+                <circle cx="150" cy="190" r="3.6"/><circle cx="262" cy="268" r="4.4"/>
+                <circle cx="392" cy="214" r="3.2"/><circle cx="470" cy="320" r="4.2"/>
+                <circle cx="118" cy="344" r="3"/><circle cx="330" cy="400" r="3.6"/>
+                <circle cx="510" cy="430" r="3"/><circle cx="210" cy="452" r="3.2"/>
+                <circle cx="430" cy="120" r="3"/><circle cx="96"  cy="250" r="2.8"/>
+                <circle cx="366" cy="500" r="3.2"/><circle cx="520" cy="212" r="2.8"/>
+            </g>
+        </svg>
+    </div>
+
+    <div class="hero-dark-inner">
+        <span class="hero-dark-eyebrow">Portfólio Profissional</span>
+        <h1 class="hero-dark-title">
+            Sandro <span class="accent">Ferreira</span>
+        </h1>
+        <p class="hero-dark-lead">
+            Infraestrutura, monitoramento e automação para ambientes mais
+            seguros, estáveis e eficientes.
+        </p>
+
+        <ul class="hero-dark-skills">
+            <li><i class="fas fa-chart-bar"></i> Monitoramento</li>
+            <li><i class="fas fa-server"></i> Infraestrutura</li>
+            <li><i class="fas fa-project-diagram"></i> Redes</li>
+            <li><i class="fas fa-shield-alt"></i> Segurança</li>
+            <li><i class="fas fa-cog"></i> Automação</li>
+        </ul>
+
+        <div class="hero-dark-cta">
+            <a href="#projetos" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+            <a href="#competencias" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
+        </div>
+    </div>
+</section>

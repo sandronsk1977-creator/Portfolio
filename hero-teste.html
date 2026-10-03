@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="hero-preview">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste de Hero — Figura 1 / Figura 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        overflow-x: hidden;
+    }
+    a { text-decoration: none; }
+    .btn-primary, .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    /* ---- barra de troca ---- */
+    #switcher {
+        position: fixed;
+        left: 50%;
+        bottom: 1.4rem;
+        transform: translateX(-50%);
+        z-index: 9999;
+        display: flex;
+        gap: 0.4rem;
+        padding: 0.45rem;
+        border-radius: 9999px;
+        background: rgba(10,10,14,0.86);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 12px 36px rgba(0,0,0,0.42);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    #switcher button {
+        border: 0;
+        cursor: pointer;
+        padding: 0.55rem 1.05rem;
+        border-radius: 9999px;
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.72);
+        background: transparent;
+        transition: all 0.25s;
+    }
+    #switcher button:hover { color: #fff; background: rgba(255,255,255,0.10); }
+    #switcher button.on { background: #1070c0; color: #fff; }
+
+    /* ---- social rail ---- */
+    .social-rail {
+        position: fixed;
+        left: 1.4rem;
+        bottom: 1.4rem;
+        z-index: 9998;
+        display: flex;
+        gap: 0.5rem;
+    }
+    .social {
+        width: 42px; height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 0.95rem;
+        transition: transform 0.3s;
+    }
+    .social:hover { transform: translateY(-3px); }
+    body.hero-light .social {
+        background: rgba(255,255,255,0.9);
+        color: #1070c0;
+        border: 1px solid rgba(22,32,44,0.1);
+    }
+    body.hero-dark .social {
+        background: rgba(255,255,255,0.05);
+        color: #35a0f5;
+        border: 1px solid rgba(53,160,245,0.35);
+    }
+
+    /* ---- navbar ---- */
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+
+    /* ---- reveal ---- */
+    .reveal { animation: rise 0.7s ease both; }
+    @keyframes rise {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<link rel="stylesheet" href="hero-themes.css">
+</head>
+
+<body class="hero-light">
+
+<nav id="navbar">
+    <a href="#" class="nav-brand"><span class="brand-name">Sandro</span> Ferreira</a>
+    <div class="nav-links">
+        <a href="#" class="nav-link">Início</a>
+        <a href="#" class="nav-link">Sobre</a>
+        <a href="#" class="nav-link">Projetos</a>
+        <a href="#" class="nav-link">Competências</a>
+        <a href="#" class="nav-cta">Contato</a>
+    </div>
+</nav>
+
+<div class="social-rail">
+    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="social"><i class="fab fa-github"></i></a>
+    <a href="#" class="social"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- FIGURA 1 -->
+<section id="hero-fig1" class="on">
+    <div class="hero-dc" aria-hidden="true">
+        <div class="hero-dc-grid"></div>
+        <div class="hero-dc-glow"></div>
+        <div class="hero-dc-rack r1"></div>
+        <div class="hero-dc-rack r2"></div>
+        <div class="hero-dc-rack r3"></div>
+    </div>
+
+    <div class="hero-light-card reveal">
+        <span class="hero-light-eyebrow">Portfólio Profissional</span>
+        <h1 class="hero-light-title">
+            <span class="accent">Sandro</span> Ferreira
+        </h1>
+        <p class="hero-light-lead">
+            Transformando infraestrutura em soluções. Monitoramento, redes,
+            segurança e automação para ambientes de alta disponibilidade.
+        </p>
+
+        <div class="hero-light-skills">
+            <div class="skill-tile"><i class="fas fa-chart-bar"></i><span>Monitoramento</span></div>
+            <div class="skill-tile"><i class="fas fa-server"></i><span>Infraestrutura</span></div>
+            <div class="skill-tile"><i class="fas fa-project-diagram"></i><span>Redes</span></div>
+            <div class="skill-tile"><i class="fas fa-shield-alt"></i><span>Segurança</span></div>
+            <div class="skill-tile"><i class="fas fa-cog"></i><span>Automação</span></div>
+        </div>
+
+        <div class="hero-light-cta">
+            <a href="#" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+            <a href="#" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
+        </div>
+    </div>
+</section>
+
+<!-- FIGURA 2 -->
+<section id="hero-fig2">
+    <div class="hero-dark-bg" aria-hidden="true"></div>
+    <div class="hero-globe" aria-hidden="true">
+        <div class="globe-halo"></div>
+        <svg viewBox="0 0 600 600" role="presentation">
+            <defs>
+                <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1f7ad4" stop-opacity=".28"/>
+                    <stop offset="100%" stop-color="#1f7ad4" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="300" cy="300" r="272" fill="url(#gCore)"/>
+            <g class="globe-arc">
+                <circle cx="300" cy="300" r="272"/>
+                <circle cx="300" cy="300" r="228"/>
+                <circle cx="300" cy="300" r="184"/>
+                <circle cx="300" cy="300" r="140"/>
+                <circle cx="300" cy="300" r="96"/>
+                <circle cx="300" cy="300" r="52"/>
+                <ellipse cx="300" cy="300" rx="272" ry="110"/>
+                <ellipse cx="300" cy="300" rx="272" ry="200"/>
+                <ellipse cx="300" cy="300" rx="110" ry="272"/>
+                <ellipse cx="300" cy="300" rx="200" ry="272"/>
+                <ellipse cx="300" cy="300" rx="52" ry="272"/>
+            </g>
+            <g class="globe-arc" opacity=".5">
+                <path d="M28 300 H572"/>
+                <path d="M72 190 C170 214 430 214 528 190"/>
+                <path d="M72 410 C170 386 430 386 528 410"/>
+            </g>
+            <g class="globe-link">
+                <path d="M150 190 L262 268 L392 214 L470 320"/>
+                <path d="M118 344 L262 268 L330 400"/>
+                <path d="M262 268 L470 320 L510 430"/>
+            </g>
+            <g class="globe-dot">
+                <circle cx="150" cy="190" r="3.6"/><circle cx="262" cy="268" r="4.4"/>
+                <circle cx="392" cy="214" r="3.2"/><circle cx="470" cy="320" r="4.2"/>
+                <circle cx="118" cy="344" r="3"/><circle cx="330" cy="400" r="3.6"/>
+                <circle cx="510" cy="430" r="3"/><circle cx="210" cy="452" r="3.2"/>
+                <circle cx="430" cy="120" r="3"/><circle cx="96"  cy="250" r="2.8"/>
+                <circle cx="366" cy="500" r="3.2"/><circle cx="520" cy="212" r="2.8"/>
+            </g>
+        </svg>
+    </div>
+
+    <div class="hero-dark-inner">
+        <span class="hero-dark-eyebrow">Portfólio Profissional</span>
+        <h1 class="hero-dark-title">
+            Sandro <span class="accent">Ferreira</span>
+        </h1>
+        <p class="hero-dark-lead">
+            Infraestrutura, monitoramento e automação para ambientes mais
+            seguros, estáveis e eficientes.
+        </p>
+
+        <ul class="hero-dark-skills">
+            <li><i class="fas fa-chart-bar"></i> Monitoramento</li>
+            <li><i class="fas fa-server"></i> Infraestrutura</li>
+            <li><i class="fas fa-project-diagram"></i> Redes</li>
+            <li><i class="fas fa-shield-alt"></i> Segurança</li>
+            <li><i class="fas fa-cog"></i> Automação</li>
+        </ul>
+
+        <div class="hero-dark-cta">
+            <a href="#" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+            <a href="#" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
+        </div>
+    </div>
+</section>
+
+<div id="switcher">
+    <button data-h="fig1" class="on">Figura 1 · Clara</button>
+    <button data-h="fig2">Figura 2 · Escura</button>
+</div>
+
+<script>
+(function () {
+    var body = document.body;
+    var f1 = document.getElementById('hero-fig1');
+    var f2 = document.getElementById('hero-fig2');
+    var btns = document.querySelectorAll('#switcher button');
+
+    function apply(key) {
+        var dark = key === 'fig2';
+        f1.classList.toggle('on', !dark);
+        f2.classList.toggle('on', dark);
+        body.classList.toggle('hero-light', !dark);
+        body.classList.toggle('hero-dark', dark);
+        document.documentElement.style.background = dark ? '#050b18' : '#eef4fb';
+        btns.forEach(function (b) {
+            b.classList.toggle('on', b.dataset.h === key);
+        });
+        try { localStorage.setItem('sf-hero-teste', key); } catch (e) {}
+    }
+
+    btns.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.dataset.h); });
+    });
+
+    var saved = 'fig1';
+    try { saved = localStorage.getItem('sf-hero-teste') || 'fig1'; } catch (e) {}
+    apply(saved);
+})();
+</script>
+</body>
+</html>
