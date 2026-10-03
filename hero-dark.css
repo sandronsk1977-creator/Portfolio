@@ -10,7 +10,7 @@ body.hero-dark #inicio {
     background: transparent;
 }
 
-/* --- navbar escura --- */
+/* --- navbar escura, menu centralizado --- */
 body.hero-dark nav {
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ body.hero-dark nav {
     box-shadow: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -32,32 +32,26 @@ body.hero-dark nav.scrolled {
     background: rgba(5,11,24,0.92);
     box-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
-body.hero-dark .nav-spacer { flex: 1; }
 body.hero-dark .nav-links {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    justify-content: center;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
-body.hero-dark .nav-cta {
-    padding: 0.6rem 1.4rem;
-    margin-left: 0.6rem;
+body.hero-dark .nav-link {
+    color: rgba(234,242,251,0.72);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1.05rem;
     border-radius: 9999px;
-    background: transparent;
-    border: 1.5px solid #35a0f5;
-    color: #35a0f5;
-    font-size: 0.85rem;
-    font-weight: 600;
     text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
-body.hero-dark .nav-cta:hover { background: #35a0f5; color: #050b18; transform: translateY(-1px); }
-body.hero-dark .nav-link { color: rgba(234,242,251,0.62); }
 body.hero-dark .nav-link:hover,
 body.hero-dark .nav-link.active {
-    color: #35a0f5;
-    background: rgba(53,160,245,0.12);
+    color: #5cc0ff;
+    background: rgba(71,195,255,0.12);
 }
 
 /* --- layout do hero (centralizado) --- */
@@ -221,9 +215,7 @@ body.hero-dark ::-webkit-scrollbar-track { background: #071124; }
 }
 @media (max-width: 640px) {
     body.hero-dark nav { padding: 0.85rem 1.1rem; }
-    body.hero-dark .nav-link { padding: 0.35rem 0.6rem; font-size: 0.78rem; }
-    body.hero-dark .nav-brand { font-size: 1rem; }
-    body.hero-dark .nav-cta { padding: 0.5rem 1rem; font-size: 0.78rem; margin-left: 0.2rem; }
+    body.hero-dark .nav-link { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
     body.hero-dark #hero { padding: 7rem 1.1rem 4rem; }
     .hero-dark-cta > * { flex: 1 1 100%; justify-content: center; text-align: center; }
     .hero-dark-skills { gap: 0.5rem 0.9rem; }
