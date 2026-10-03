@@ -32,16 +32,7 @@ body.hero-dark nav.scrolled {
     background: rgba(5,11,24,0.92);
     box-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
-body.hero-dark .nav-brand {
-    display: inline-flex;
-    align-items: center;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #eaf2fb;
-    text-decoration: none;
-}
-body.hero-dark .nav-brand .brand-name { color: #35a0f5; }
+body.hero-dark .nav-spacer { flex: 1; }
 body.hero-dark .nav-links {
     display: flex;
     align-items: center;
