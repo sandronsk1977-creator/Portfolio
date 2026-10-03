@@ -1,5 +1,6 @@
 /* ============================================================
-   CHUVA MATRIX (canvas) — fundo do datacenter
+   CHUVA MATRIX VERDE + EFEITO DE RUPTURA
+   Canvas: colunas de codigo que se abrem ao centro.
    ============================================================ */
 #matrix-canvas {
     position: absolute;
@@ -8,9 +9,39 @@
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.34;
-    mix-blend-mode: screen;
+    opacity: 0.55;
 }
 
-/* matrix tem que ficar atras dos racks e do floor */
+/* vinheta escura nas bordas (foco no centro) */
+.dc-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(ellipse 62% 78% at 50% 50%, transparent 42%, rgba(2, 6, 4, 0.88) 100%);
+}
+
+/* brilho verde nas bordas da ruptura */
+.dc-rift {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, rgba(0, 255, 90, 0.55) 30%, rgba(0, 255, 90, 0.55) 70%, transparent);
+    box-shadow:
+        0 0 24px rgba(0, 255, 90, 0.55),
+        0 0 70px rgba(0, 255, 120, 0.30);
+    animation: riftBreath 6s ease-in-out infinite;
+}
+@keyframes riftBreath {
+    0%, 100% { opacity: 0.35; transform: translateX(-50%) scaleX(1); }
+    50% { opacity: 0.9; transform: translateX(-50%) scaleX(2.4); }
+}
+
+/* matrix fica atras dos racks */
 #matrix-canvas ~ .dc-cam { position: relative; z-index: 1; }
+.dc-vignette { z-index: 3; }

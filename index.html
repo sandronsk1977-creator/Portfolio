@@ -713,6 +713,7 @@
     <!-- Datacenter animado (fundo fixo da pagina inteira) -->
     <div class="dc-scene" aria-hidden="true">
         <canvas id="matrix-canvas"></canvas>
+        <div class="dc-rift"></div>
         <div class="dc-cam">
             <div class="dc-haze a"></div>
             <div class="dc-haze b"></div>
@@ -745,6 +746,7 @@
             <div class="dc-floor"></div>
             <div class="dc-sheen"></div>
         </div>
+        <div class="dc-vignette"></div>
     </div>
 
     <!-- Nav -->
@@ -1027,68 +1029,82 @@
             var canvas = document.getElementById('matrix-canvas');
             if (!canvas) return;
 
-            var ctx = canvas.getContext('2d', { alpha: true });
+            var ctx = canvas.getContext('2d', { alpha: false });
             var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            var FONT = 14;
-            var COLORS = ['#35a0f5', '#4aa9ff', '#5cc0ff', '#7fd0ff'];
-            var GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>/\\[]{}=+-*#$%&@';
+            var FONT = 15;
+            var RIFT_W = 150;    // largura da area que se abre
+            var RIFT_PUSH = 92;  // quanto o codigo e empurrado pra fora
+            var GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>[]{}=+-*#$%&@';
 
-            var columns = 0;
             var drops = [];
-            var frame = 0;
+            var cols = 0;
             var running = true;
+            var t0 = performance.now();
 
             function resize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                var size = FONT;
-                columns = Math.ceil(canvas.width / size);
+                cols = Math.ceil(canvas.width / FONT);
                 drops = [];
-                for (var i = 0; i < columns; i++) {
-                    drops[i] = Math.random() * -60;
-                }
+                for (var i = 0; i < cols; i++) drops[i] = Math.random() * -80;
             }
 
             function draw() {
                 if (!running) return;
-                frame++;
 
-                // rastro semi-transparente (efeito de rastro do Matrix)
-                ctx.fillStyle = 'rgba(3, 7, 14, 0.085)';
+                // rastro verde-escuro (fade classico do Matrix)
+                ctx.fillStyle = 'rgba(0, 10, 2, 0.09)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                var t = (performance.now() - t0) / 1000;
+                // respiracao da ruptura
+                var breath = 0.55 + 0.45 * Math.sin(t * 0.55);
+                var push = RIFT_PUSH * breath;
+                var cx = canvas.width / 2;
 
                 ctx.font = FONT + 'px monospace';
                 ctx.textBaseline = 'top';
 
-                for (var i = 0; i < columns; i++) {
-                    var ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+                for (var i = 0; i < cols; i++) {
+                    var baseX = i * FONT;
+                    var dx = baseX - cx;
+                    var ad = Math.abs(dx);
+                    var x = baseX;
+
+                    // empurra as colunas para fora da zona de ruptura
+                    if (ad < RIFT_W) {
+                        var k = 1 - ad / RIFT_W;      // 0 na borda, 1 no centro
+                        x = baseX + (dx < 0 ? -1 : 1) * (k * k) * push;
+                    }
+
                     var y = drops[i] * FONT;
+                    var ch = GLYPHS[(Math.random() * GLYPHS.length) | 0];
 
-                    // cabecalho mais brilhante
-                    ctx.fillStyle = '#d8f2ff';
-                    ctx.shadowColor = '#7fd0ff';
-                    ctx.shadowBlur = 8;
-                    ctx.fillText(ch, i * FONT, y);
+                    // cabeca branca-esverdeada com brilho
+                    ctx.fillStyle = '#e8fff2';
+                    ctx.shadowColor = '#5cffa8';
+                    ctx.shadowBlur = 10;
+                    ctx.fillText(ch, x, y);
 
-                    // corpo em ciano
-                    ctx.shadowBlur = 4;
-                    ctx.fillStyle = COLORS[Math.floor(Math.random() * COLORS.length)];
-                    ctx.fillText(ch, i * FONT, y - FONT);
+                    // corpo verde
+                    ctx.shadowBlur = 5;
+                    ctx.fillStyle = '#00ff5c';
+                    ctx.fillText(ch, x, y - FONT);
 
                     ctx.shadowBlur = 0;
+                    ctx.fillStyle = 'rgba(0, 190, 60, 0.75)';
+                    ctx.fillText(ch, x, y - FONT * 2);
 
-                    // velocidade variando por coluna
-                    if (y > canvas.height && Math.random() > 0.975) {
-                        drops[i] = Math.random() * -40;
+                    if (y > canvas.height && Math.random() > 0.972) {
+                        drops[i] = Math.random() * -50;
                     }
-                    drops[i] += 0.42 + Math.random() * 0.5;
+                    drops[i] += 0.36 + Math.random() * 0.55;
                 }
 
                 requestAnimationFrame(draw);
             }
 
-            // pausa quando a aba nao esta visivel (economiza CPU)
             document.addEventListener('visibilitychange', function () {
                 if (document.hidden) {
                     running = false;
@@ -1100,9 +1116,10 @@
 
             resize();
             window.addEventListener('resize', resize);
+            ctx.fillStyle = '#000a02';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             if (reduce) {
-                // sem animacao: desenha um frame estatico e pronto
                 draw();
                 running = false;
             } else {
