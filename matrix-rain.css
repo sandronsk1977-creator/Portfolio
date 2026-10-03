@@ -1,15 +1,38 @@
 /* ============================================================
-   CHUVA MATRIX VERDE + EFEITO DE RUPTURA
-   Canvas: colunas de codigo que se abrem ao centro.
+   VIDEO DE FUNDO + CHUVA MATRIX VERDE + EFEITO DE RUPTURA
    ============================================================ */
+
+/* --- video base (laboratorio / hackstation) --- */
+.dc-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    filter: saturate(0.75) contrast(1.05) brightness(0.62);
+}
+
+/* --- tinta escura por cima do video (mantem legibilidade) --- */
+.dc-video-tint {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(120% 90% at 50% 40%, rgba(2, 12, 6, 0.55), transparent 62%),
+        linear-gradient(180deg, rgba(3, 10, 6, 0.86) 0%, rgba(2, 7, 4, 0.72) 50%, rgba(2, 6, 3, 0.92) 100%);
+}
+
 #matrix-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 2;
     pointer-events: none;
-    opacity: 0.55;
+    opacity: 0.42;
 }
 
 /* vinheta escura nas bordas (foco no centro) */
@@ -29,7 +52,7 @@
     bottom: 0;
     width: 2px;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 3;
     pointer-events: none;
     background: linear-gradient(180deg, transparent, rgba(0, 255, 90, 0.55) 30%, rgba(0, 255, 90, 0.55) 70%, transparent);
     box-shadow:
@@ -44,4 +67,4 @@
 
 /* matrix fica atras dos racks */
 #matrix-canvas ~ .dc-cam { position: relative; z-index: 1; }
-.dc-vignette { z-index: 3; }
+.dc-vignette { z-index: 4; }
