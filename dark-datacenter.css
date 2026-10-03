@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    TEMA ESCURO GLOBAL + DATACENTER REALISTA (animado)
    Carregado depois do <style> principal, entao sobrescreve por cascata.
    ============================================================ */
@@ -209,7 +209,7 @@
     66% { transform: translate(-30px, 28px) scale(0.96); opacity: 0.5; }
 }
 
-/* deriva sutil de camera (dá vida a cena) */
+/* deriva sutil de camera (dÃ¡ vida a cena) */
 .dc-cam {
     position: absolute;
     inset: 0;
@@ -295,7 +295,7 @@ body.hero-dark section,
 body.hero-dark footer { position: relative; z-index: 1; }
 
 body.hero-dark .sec-title { color: #eef4fc; }
-body.hero-dark .sec-desc { color: rgba(219,231,245,0.72) !important; }
+body.hero-dark .sec-desc { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark .sec-label { background: linear-gradient(135deg, #5cc0ff, #3a8fe0); }
 
 body.hero-dark .about-card,
@@ -324,9 +324,9 @@ body.hero-dark .proj3-grid h4 { color: #eaf2fb !important; }
 body.hero-dark .about-card p,
 body.hero-dark .highlight-item p,
 body.hero-dark .skill-item p,
-body.hero-dark .proj3-grid p { color: rgba(219,231,245,0.72) !important; }
+body.hero-dark .proj3-grid p { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark .about-card li,
-body.hero-dark .highlight-item li { color: rgba(219,231,245,0.80) !important; }
+body.hero-dark .highlight-item li { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark .about-card li::marker,
 body.hero-dark .highlight-item li::marker { color: #35a0f5; }
 
@@ -352,12 +352,12 @@ body.hero-dark footer {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
-body.hero-dark footer p { color: rgba(219,231,245,0.62) !important; }
+body.hero-dark footer p { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark footer p:first-child { color: #eef4fc !important; }
 
-body.hero-dark #projetos p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.68) !important; }
+body.hero-dark #projetos p[style*="rgba(50,49,48"] { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark footer p[style*="#201f1e"] { color: #eef4fc !important; }
-body.hero-dark footer p[style*="rgba(50,49,48"] { color: rgba(219,231,245,0.62) !important; }
+body.hero-dark footer p[style*="rgba(50,49,48"] { color: rgba(226,236,248,0.92) !important; }
 
 /* ---------- PROJETOS (cards + listas) ---------- */
 body.hero-dark .project-info h3 {
@@ -369,7 +369,8 @@ body.hero-dark .project-info h3 {
     -webkit-background-clip: text;
 }
 body.hero-dark .project-info p {
-    color: rgba(219,231,245,0.76) !important;
+    /* tom azul-acinzentado: legivel sem ofuscar */
+    color: rgba(226,236,248,0.92) !important;
 }
 body.hero-dark .project-info ul li {
     background: rgba(53,160,245,0.14) !important;
@@ -382,7 +383,7 @@ body.hero-dark .project-info strong {
     color: #6cc6ff !important;
 }
 /* conteudo dos chips que nao tem strong */
-body.hero-dark .project-info ul li { color: rgba(219,231,245,0.80) !important; }
+body.hero-dark .project-info ul li { color: rgba(226,236,248,0.92) !important; }
 
 /* divisor */
 body.hero-dark .project-divider {
@@ -401,7 +402,7 @@ body.hero-dark .project-visual .zoom {
 
 /* proj3 (grid de projetos) */
 body.hero-dark .proj3-grid h4 { color: #eaf2fb !important; }
-body.hero-dark .proj3-grid p { color: rgba(219,231,245,0.72) !important; }
+body.hero-dark .proj3-grid p { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark .proj3-imgs { background: rgba(10,20,38,0.7) !important; }
 
 /* modal */
