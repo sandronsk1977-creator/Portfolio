@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ---------------------------------------------------------
-   0. VIDEO DE FUNDO
+   0. VIDEO DE FUNDO (carrossel)
    --------------------------------------------------------- */
 .dc-scene {
     position: fixed;
@@ -12,6 +12,10 @@
     pointer-events: none;
     overflow: hidden;
 }
+.dc-video-carousel {
+    position: absolute;
+    inset: 0;
+}
 .dc-video {
     position: absolute;
     inset: 0;
@@ -19,9 +23,11 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease;
     filter: saturate(0.75) contrast(1.05) brightness(0.62);
 }
+.dc-video.is-active { opacity: 1; }
 /* tinta escura: garante legibilidade do texto sobre o video */
 .dc-video-tint {
     position: absolute;
@@ -196,12 +202,13 @@ body.hero-dark footer p[style*="rgba(50,49,48"] { color: rgba(226,236,248,0.92) 
 
 /* ---------- PROJETOS (cards + listas) ---------- */
 body.hero-dark .project-info h3 {
-    /* o gradiente original usa text-fill transparent e some no fundo escuro */
-    background: linear-gradient(135deg, #7fd0ff 0%, #3a9be8 100%);
-    -webkit-text-fill-color: #ffffff;
-    color: #ffffff;
-    background-clip: text;
+    /* ATENCAO: usar background-image (nao o shorthand "background"),
+       senao o background-clip:text e resetado e o titulo vira barra. */
+    background-image: linear-gradient(135deg, #8fd8ff 0%, #2f86e0 100%);
     -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #4aa9ff;
 }
 body.hero-dark .project-info p {
     /* tom azul-acinzentado: legivel sem ofuscar */
@@ -255,3 +262,52 @@ body.hero-dark ::-webkit-scrollbar-thumb:hover {
 }
 
 body.hero-dark.modal-open { overflow: hidden; }
+
+/* ---------------------------------------------------------
+   NAVEGACAO POR SECAO (setas)
+   --------------------------------------------------------- */
+.section-nav {
+    position: fixed;
+    right: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.section-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.section-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #5cc0ff;
+    background: rgba(8, 18, 34, 0.85);
+    border: 1px solid rgba(71, 195, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    transition: background 0.25s, color 0.25s, transform 0.25s, border-color 0.25s;
+}
+.section-nav-btn:hover {
+    background: #35a0f5;
+    color: #050b18;
+    border-color: #5cc0ff;
+    transform: scale(1.08);
+}
+.section-nav-btn:active { transform: scale(0.96); }
+
+@media (max-width: 640px) {
+    .section-nav { right: 0.6rem; gap: 0.45rem; }
+    .section-nav-btn { width: 38px; height: 38px; font-size: 0.75rem; }
+}

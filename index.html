@@ -23,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hero-dark.css">
     <link rel="stylesheet" href="dark-datacenter.css">
-    <link rel="stylesheet" href="matrix-rain.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -710,11 +709,14 @@
     <div class="ambient amb-2"></div>
     <div class="ambient amb-3"></div>
 
-    <!-- Datacenter animado (fundo fixo da pagina inteira) -->
+    <!-- Video de fundo (fundo fixo da pagina inteira) -->
     <div class="dc-scene" aria-hidden="true">
-        <video class="dc-video" src="smart6.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="dc-video-carousel">
+            <video class="dc-video is-active" src="smart.mp4" muted loop playsinline preload="auto" autoplay></video>
+            <video class="dc-video" src="smart3.mp4" muted loop playsinline preload="auto"></video>
+            <video class="dc-video" src="smart4.mp4" muted loop playsinline preload="auto"></video>
+        </div>
         <div class="dc-video-tint"></div>
-        <canvas id="matrix-canvas"></canvas>
         <div class="dc-rift"></div>
         <div class="dc-cam">
             <div class="dc-haze a"></div>
@@ -739,7 +741,16 @@
         <div class="dc-vignette"></div>
     </div>
 
-    <!-- Nav -->
+    <!-- Navegacao por secao (setas) -->
+    <div id="sectionNav" class="section-nav" aria-hidden="true">
+        <button type="button" id="sectionPrev" class="section-nav-btn" aria-label="Secao anterior" title="Secao anterior">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button type="button" id="sectionNext" class="section-nav-btn" aria-label="Proxima secao" title="Proxima secao">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
     <nav id="navbar">
         <div class="nav-links">
             <a href="#inicio" class="nav-link">Início</a>
@@ -751,7 +762,6 @@
 
     <!-- Social rail (selos) -->
     <div id="socialRail" class="social-rail">
-        <a href="https://www.linkedin.com/in/sandro-ferreira-5816b4284/" class="social" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/sandronsk1977-creator/" class="social" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://api.whatsapp.com/send/?phone=5562999693469&text=O%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%AD%E2%81%A3%E2%81%A6%E2%81%A2%CD%8F%E2%81%A8%E2%81%A6%E2%81%A8%E2%80%AA%E2%81%A0%CD%8F%E2%81%AB%E2%81%A3%E2%81%A3%E2%81%AB%E2%81%A6%E2%81%A3%E2%81%AA%E2%81%AA%E2%81%A4%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%ADl%C3%A1%2C+vim+atrav%C3%A9s+da+p%C3%A1gina+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+você&type=phone_number&app_absent=0" class="social" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
@@ -919,7 +929,7 @@
             <div class="reveal" style="transition-delay:0.2s">
                 <div class="project-card reversed">
                     <div class="project-info">
-                        <h3>Projeto 2 <span>&#9755;</span> Simulador do Switch Cisco para criação de VLANs</h3>
+                        <h3>Projeto 2 <span>&#9755;</span> 🛡️ Projeto SF Cyber 📚 Academia Cibersegurança e Redes</h3>
                         <p>Simulador interativo e educativo de um switch Cisco. Aprender redes pode ser muito mais do que teoria. Com o simulador interativo de Switch Cisco, os alunos praticam VLANs usando comandos reais, avançam por desafios progressivos e desenvolvem habilidades de configuração em um ambiente gamificado 🧪 e sem precisar de equipamentos físicos.</p>
                         <div class="about-card" style="margin-bottom:1rem;padding:1.2rem">
                             <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">🛡️ Projeto SF Cyber - Academia CiberSegurança e Redes</h4>
@@ -1013,109 +1023,103 @@
         </div>
     </div>
 
-    <!-- Chuva Matrix (fundo) -->
+    <!-- Carrossel de videos + navegacao por secao -->
     <script>
-        (function () {
-            var canvas = document.getElementById('matrix-canvas');
-            if (!canvas) return;
+    (function () {
+        'use strict';
 
-            var ctx = canvas.getContext('2d', { alpha: false });
-            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        /* ---------- Carrossel de videos (22s cada) ---------- */
+        var CAROUSEL_MS = 22000;
+        var videos = Array.prototype.slice.call(
+            document.querySelectorAll('.dc-video-carousel .dc-video')
+        );
+        var carouselIndex = 0;
+        var carouselTimer = null;
 
-            var FONT = 15;
-            var RIFT_W = 150;    // largura da area que se abre
-            var RIFT_PUSH = 92;  // quanto o codigo e empurrado pra fora
-            var GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>[]{}=+-*#$%&@';
-
-            var drops = [];
-            var cols = 0;
-            var running = true;
-            var t0 = performance.now();
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                cols = Math.ceil(canvas.width / FONT);
-                drops = [];
-                for (var i = 0; i < cols; i++) drops[i] = Math.random() * -80;
-            }
-
-            function draw() {
-                if (!running) return;
-
-                // rastro verde-escuro (fade classico do Matrix)
-                ctx.fillStyle = 'rgba(0, 10, 2, 0.09)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                var t = (performance.now() - t0) / 1000;
-                // respiracao da ruptura
-                var breath = 0.55 + 0.45 * Math.sin(t * 0.55);
-                var push = RIFT_PUSH * breath;
-                var cx = canvas.width / 2;
-
-                ctx.font = FONT + 'px monospace';
-                ctx.textBaseline = 'top';
-
-                for (var i = 0; i < cols; i++) {
-                    var baseX = i * FONT;
-                    var dx = baseX - cx;
-                    var ad = Math.abs(dx);
-                    var x = baseX;
-
-                    // empurra as colunas para fora da zona de ruptura
-                    if (ad < RIFT_W) {
-                        var k = 1 - ad / RIFT_W;      // 0 na borda, 1 no centro
-                        x = baseX + (dx < 0 ? -1 : 1) * (k * k) * push;
-                    }
-
-                    var y = drops[i] * FONT;
-                    var ch = GLYPHS[(Math.random() * GLYPHS.length) | 0];
-
-                    // cabeca branca-esverdeada com brilho
-                    ctx.fillStyle = '#e8fff2';
-                    ctx.shadowColor = '#5cffa8';
-                    ctx.shadowBlur = 10;
-                    ctx.fillText(ch, x, y);
-
-                    // corpo verde
-                    ctx.shadowBlur = 5;
-                    ctx.fillStyle = '#00ff5c';
-                    ctx.fillText(ch, x, y - FONT);
-
-                    ctx.shadowBlur = 0;
-                    ctx.fillStyle = 'rgba(0, 190, 60, 0.75)';
-                    ctx.fillText(ch, x, y - FONT * 2);
-
-                    if (y > canvas.height && Math.random() > 0.972) {
-                        drops[i] = Math.random() * -50;
-                    }
-                    drops[i] += 0.36 + Math.random() * 0.55;
-                }
-
-                requestAnimationFrame(draw);
-            }
-
-            document.addEventListener('visibilitychange', function () {
-                if (document.hidden) {
-                    running = false;
-                } else if (!reduce) {
-                    running = true;
-                    requestAnimationFrame(draw);
+        function showVideo(i) {
+            if (!videos.length) return;
+            carouselIndex = (i + videos.length) % videos.length;
+            videos.forEach(function (v, idx) {
+                var on = idx === carouselIndex;
+                v.classList.toggle('is-active', on);
+                if (on) {
+                    var pr = v.play();
+                    if (pr && typeof pr.catch === 'function') pr.catch(function () {});
+                } else {
+                    v.pause();
                 }
             });
+        }
 
-            resize();
-            window.addEventListener('resize', resize);
-            ctx.fillStyle = '#000a02';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        function startCarousel() {
+            if (!videos.length || carouselTimer) return;
+            carouselTimer = window.setInterval(function () {
+                showVideo(carouselIndex + 1);
+            }, CAROUSEL_MS);
+        }
 
-            if (reduce) {
-                draw();
-                running = false;
-            } else {
-                requestAnimationFrame(draw);
+        function stopCarousel() {
+            if (carouselTimer) {
+                window.clearInterval(carouselTimer);
+                carouselTimer = null;
             }
-        })();
+        }
+
+        if (videos.length) {
+            showVideo(0);
+            startCarousel();
+
+            // Pausa quando a aba fica oculta (economiza CPU/energia)
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    stopCarousel();
+                } else {
+                    showVideo(carouselIndex);
+                    startCarousel();
+                }
+            });
+        }
+
+        /* ---------- Setas de secao anterior / proxima ---------- */
+        var sections = Array.prototype.slice.call(
+            document.querySelectorAll('section[id]')
+        );
+        var nav = document.getElementById('sectionNav');
+        var prevBtn = document.getElementById('sectionPrev');
+        var nextBtn = document.getElementById('sectionNext');
+        var current = 0;
+
+        function nearestSection() {
+            var line = window.innerHeight * 0.4;
+            var best = 0;
+            sections.forEach(function (el, i) {
+                if (el.getBoundingClientRect().top <= line) best = i;
+            });
+            return best;
+        }
+
+        function goTo(i) {
+            if (!sections.length) return;
+            var target = Math.max(0, Math.min(sections.length - 1, i));
+            current = target;
+            sections[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        if (nav && prevBtn && nextBtn && sections.length) {
+            prevBtn.addEventListener('click', function () { goTo(current - 1); });
+            nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+            function sync() {
+                current = nearestSection();
+                nav.classList.add('visible');
+            }
+
+            window.addEventListener('scroll', sync, { passive: true });
+            window.addEventListener('resize', sync);
+            window.addEventListener('load', sync);
+            sync();
+        }
+    })();
     </script>
 
     <!-- Three.js -->
