@@ -222,11 +222,17 @@
         .profile-wrap {
             position: relative;
             display: inline-block;
+            /* o anel giratorio nao pode vazar: porem overflow:hidden cortaria
+               o proprio anel (ele vive em inset negativo), entao o anel e
+               mantido dentro do proprio formato — ver animacao abaixo */
         }
-        
+
         .profile-wrap img {
             width: 100%;
-            max-width: 240px; /* Ajustado de 340px para 380px */
+            max-width: 240px;
+            /* height:auto e obrigatorio: sem isso o atributo height="526" do
+               HTML vira altura fixae a imagem e esticada */
+            height: auto;
             aspect-ratio: 4/5; /* Mantém uma proporção equilibrada sem esticar */
             object-fit: cover;
             border-radius: 1.5rem;
@@ -234,14 +240,21 @@
             z-index: 1;
             display: block;
         }
-        
+
+        /* Anel giratorio: anima o ANGULO do conic-gradient em vez de girar o
+           elemento. Girar um retangulo nao quadrado faz os cantos escaparem
+           da caixa (era o que aparecia como aba azul torta ao redor da foto). */
+        @property --ring-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
         .profile-wrap::before {
             content: '';
             position: absolute;
             inset: -6px;
             border-radius: 1.8rem;
-            background: conic-gradient(from 0deg, #0078d4, #50a6ff, #106ebe, #0078d4);
-            
+            background: conic-gradient(from var(--ring-angle), #0078d4, #50a6ff, #106ebe, #0078d4);
             z-index: 0;
             animation: spinBorder 4s linear infinite;
         }
@@ -254,7 +267,11 @@
             z-index: 0;
         }
         @keyframes spinBorder {
-            to { transform: rotate(360deg); }
+            to { --ring-angle: 360deg; }
+        }
+        /* fallback: sem suporte a @property, o anel fica estatico (angular 0deg) */
+        @supports not (background: conic-gradient(from var(--ring-angle), red, blue)) {
+            .profile-wrap::before { animation: none; }
         }
         .about-card {
             background: #ffffff;
@@ -364,6 +381,7 @@
         }
         .project-visual img {
             width: 100%;
+            height: auto; /* preserva a proporcao (atributo height do HTML) */
             display: block;
             transition: transform 0.6s;
         }
@@ -441,6 +459,7 @@
         }
         .proj3-imgs img {
             width: 100%;
+            height: auto; /* preserva a proporcao (atributo height do HTML) */
             border-radius: 0.75rem;
             transition: all 0.3s;
             border: 1px solid rgba(0,0,0,0.07);
