@@ -11,7 +11,11 @@
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+    background: #050b18;
 }
+/* sem filtro CSS: filter em video fullscreen obriga o compositor a
+   repintar o frame inteiro a cada quadro. O escurecimento e feito
+   pelas camadas de tinta abaixo, que sao estaticas. */
 .dc-video {
     position: absolute;
     inset: 0;
@@ -19,7 +23,17 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: saturate(1.00) contrast(1.02) brightness(0.90);
+    transform: translateZ(0);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.dc-video.ready { opacity: 1; }
+/*Fallback: sem JS/sem play, o poster cobre o espaco */
+.dc-scene::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #0a1120 url('hero-poster.jpg') center / cover no-repeat;
 }
 /* tinta escura: garante legibilidade do texto sobre o video */
 .dc-video-tint {
@@ -40,7 +54,8 @@
     background: radial-gradient(ellipse 74% 84% at 50% 50%, transparent 48%, rgba(2, 6, 4, 0.80) 100%);
 }
 
-   2. ICONES PULSANTES
+/* ---------------------------------------------------------
+   1. ICONES PULSANTES
    --------------------------------------------------------- */
 @keyframes iconPulse {
     0%, 100% {
@@ -69,6 +84,7 @@ body.hero-dark .social:nth-child(3) { animation-delay: 0.9s; }
 body.hero-dark .hero-dark-skills i {
     animation: iconGlow 2.8s ease-in-out infinite;
     display: inline-block;
+    will-change: filter;
 }
 body.hero-dark .hero-dark-skills li:nth-child(2) i { animation-delay: 0.35s; }
 body.hero-dark .hero-dark-skills li:nth-child(3) i { animation-delay: 0.7s; }
@@ -80,6 +96,7 @@ body.hero-dark .about-card h3 i,
 body.hero-dark .highlight-item i {
     animation: iconGlow 3s ease-in-out infinite;
     display: inline-block;
+    will-change: filter;
 }
 body.hero-dark .about-card:nth-of-type(2) h3 i { animation-delay: 0.4s; }
 body.hero-dark .about-card:nth-of-type(3) h3 i { animation-delay: 0.8s; }
@@ -94,9 +111,6 @@ body.hero-dark {
     background: #050b18 !important;
     color: #dbe7f5 !important;
 }
-
-body.hero-dark #bg-canvas,
-body.hero-dark .ambient { display: none; }
 
 body.hero-dark section,
 body.hero-dark footer { position: relative; z-index: 1; }
@@ -123,16 +137,19 @@ body.hero-dark .hero-dark-skills li {
     text-shadow: 0 2px 14px rgba(2, 8, 4, 0.88), 0 1px 3px rgba(2, 8, 4, 0.72);
 }
 
+/* Cartoes: fundo solido em vez de backdrop-filter.
+   backdrop-filter sobre video animado obriga o navegador a refazer o
+   blur da area a cada quadro do video, em varias camadas sobrepostas —
+   era o maior custo de GPU da pagina. As camadas de tinta do video ja
+   escurecem o fundo, entao um alpha maior nao perde o efeito visual. */
 body.hero-dark .about-card,
 body.hero-dark .project-card,
 body.hero-dark .highlight-item,
 body.hero-dark .skill-item,
 body.hero-dark .proj3-grid > div {
-    background: rgba(14,27,48,0.82) !important;
+    background: rgba(11, 23, 42, 0.93) !important;
     border: 1px solid rgba(90,170,255,0.16) !important;
     box-shadow: 0 10px 34px rgba(0,0,0,0.42) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 body.hero-dark .about-card:hover,
 body.hero-dark .project-card:hover,
@@ -172,9 +189,7 @@ body.hero-dark .profile-wrap::after { background: #071124; }
 body.hero-dark .profile-wrap { box-shadow: 0 0 0 2px rgba(71,195,255,0.25); }
 
 body.hero-dark footer {
-    background: rgba(8,18,34,0.86) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(8,18,34,0.95) !important;
 }
 body.hero-dark footer p { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark footer p:first-child { color: #eef4fc !important; }
@@ -231,7 +246,7 @@ body.hero-dark .proj3-grid p { color: rgba(226,236,248,0.92) !important; }
 body.hero-dark .proj3-imgs { background: rgba(10,20,38,0.7) !important; }
 
 /* modal */
-body.hero-dark .modal { background: rgba(3,8,18,0.92) !important; }
+body.hero-dark .modal { background: rgba(3,8,18,0.94) !important; }
 body.hero-dark .modal .close { color: #dbe7f5 !important; }
 
 body.hero-dark ::-webkit-scrollbar-track { background: #071124; }
@@ -275,10 +290,8 @@ body.hero-dark.modal-open { overflow: hidden; }
     cursor: pointer;
     font-size: 0.85rem;
     color: #5cc0ff;
-    background: rgba(8, 18, 34, 0.85);
+    background: rgba(8, 18, 34, 0.92);
     border: 1px solid rgba(71, 195, 255, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
     transition: background 0.25s, color 0.25s, transform 0.25s, border-color 0.25s;
 }
@@ -293,4 +306,26 @@ body.hero-dark.modal-open { overflow: hidden; }
 @media (max-width: 640px) {
     .section-nav { right: 0.6rem; gap: 0.45rem; }
     .section-nav-btn { width: 38px; height: 38px; font-size: 0.75rem; }
+}
+
+/* ---------------------------------------------------------
+   4. MOVIMENTO REDUZIDO / ECONOMIA DE RECURSOS
+   Quem pede menos movimento (ou economiza dados) nao recebe
+   video nem animacoes infinitas — o layout continua identico.
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .dc-video { display: none; }
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
+    body.hero-dark .social,
+    body.hero-dark .hero-dark-skills i,
+    body.hero-dark .skill-icon,
+    body.hero-dark .about-card h3 i,
+    body.hero-dark .highlight-item i,
+    .profile-wrap::before,
+    .hero-dark-title .accent,
+    .globe-link { animation: none !important; }
 }

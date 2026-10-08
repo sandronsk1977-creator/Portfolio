@@ -16,10 +16,14 @@
     <meta name="author" content="Sandro Ferreira">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050b18">
     <title>Sandro Ferreira | Zabbix, Infraestrutura, Redes, CyberSec e Automação IA</title>
     <link rel="icon" href="favicon-sf-red.png" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="hero-poster.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hero-dark.css">
     <link rel="stylesheet" href="dark-datacenter.css">
@@ -33,48 +37,6 @@
         }
         html { scroll-behavior: smooth; }
 
-        /* Three.js Canvas */
-        #bg-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Ambient gradients */
-        .ambient {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .amb-1 {
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(0,120,212,0.10), transparent);
-            top: -15%; right: -10%;
-            animation: ambFloat 16s ease-in-out infinite;
-        }
-        .amb-2 {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(50,172,255,0.08), transparent);
-            bottom: -10%; left: -5%;
-            animation: ambFloat 20s ease-in-out infinite reverse;
-        }
-        .amb-3 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(0,120,212,0.06), transparent);
-            top: 40%; left: 50%;
-            transform: translate(-50%,-50%);
-            animation: ambFloat 14s ease-in-out infinite 3s;
-        }
-        @keyframes ambFloat {
-            0%,100% { transform: translate(0,0) scale(1); }
-            33% { transform: translate(40px,-40px) scale(1.1); }
-            66% { transform: translate(-30px,30px) scale(0.95); }
-        }
-
         /* Nav */
         nav {
             position: fixed;
@@ -82,8 +44,7 @@
             z-index: 100;
             padding: 0.6rem 1.5rem;
             border-radius: 9999px;
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(16px);
+            background: rgba(5,11,24,0.92);
             border: 1px solid rgba(0,0,0,0.08);
             box-shadow: 0 4px 24px rgba(0,0,0,0.08);
             transition: all 0.4s;
@@ -619,8 +580,7 @@
             position: fixed;
             inset: 0;
             z-index: 200;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.72);
             align-items: center;
             justify-content: center;
             padding: 2rem;
@@ -701,36 +661,10 @@
 </head>
 <body class="hero-dark">
 
-    <canvas id="bg-canvas"></canvas>
-    <div class="ambient amb-1"></div>
-    <div class="ambient amb-2"></div>
-    <div class="ambient amb-3"></div>
-
     <!-- Video de fundo (fundo fixo da pagina inteira) -->
     <div class="dc-scene" aria-hidden="true">
-        <video class="dc-video" src="smart4.mp4" autoplay muted loop playsinline preload="auto"></video>
+        <video class="dc-video" id="bgVideo" src="smart4.mp4" poster="hero-poster.jpg" muted loop playsinline preload="none"></video>
         <div class="dc-video-tint"></div>
-        <div class="dc-rift"></div>
-        <div class="dc-cam">
-            <div class="dc-haze a"></div>
-            <div class="dc-haze b"></div>
-            <div class="dc-haze c"></div>
-
-            <div class="dc-row left">
-                <div class="dc-rack p1"></div>
-                <div class="dc-rack p2"></div>
-                <div class="dc-rack p3"></div>
-                <div class="dc-rack p4"></div>
-            </div>
-
-            <div class="dc-aisle"></div>
-
-            <div class="dc-row right">
-                <div class="dc-rack p3"></div>
-                <div class="dc-rack p2"></div>
-                <div class="dc-rack p1"></div>
-            </div>
-        </div>
         <div class="dc-vignette"></div>
     </div>
 
@@ -841,7 +775,7 @@
             <div class="about-grid">
                 <div class="reveal-left" style="transition-delay:0.1s">
                     <div class="profile-wrap">
-                        <img src="perfil_stelar.png" alt="Sandro Ferreira">
+                        <img src="perfil.webp" width="480" height="526" alt="Sandro Ferreira" decoding="async">
                     </div>
                 </div>
                 <div class="reveal-right" style="transition-delay:0.15s">
@@ -891,26 +825,26 @@
                             <li><strong style="color:#0078d4">Grafana</strong> Performance e certificados SSL</li>
                         </ul>
                     </div>
-                    <div class="project-visual" onclick="openModal(this.querySelector('img').src, 'Portal de Monitoramento ITSM')">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/TUtGPabcINipfRJP.png" alt="Portal ITSM">
+                    <div class="project-visual" onclick="openModal('itsm-portal.webp', 'Portal de Monitoramento ITSM')">
+                        <img src="itsm-portal.webp" width="1100" height="454" alt="Portal ITSM" loading="lazy" decoding="async">
                         <div class="zoom"><i class="fas fa-expand"></i></div>
                     </div>
                 </div>
                 <div class="project-thumbs">
-                    <div onclick="openModal('https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/tMiKrNlcevwFMIXp.png', 'Painel AD - Gestão de Usuários')">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/tMiKrNlcevwFMIXp.png" alt="Painel AD">
+                    <div onclick="openModal('itsm-ad.webp', 'Painel AD - Gestão de Usuários')">
+                        <img src="itsm-ad.webp" width="600" height="334" alt="Painel AD" loading="lazy" decoding="async">
                         <p>Painel AD</p>
                     </div>
-                    <div onclick="openModal('https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/nxRlsaPZdWUoHzBB.png', 'Portal Carrossel NOC')">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/nxRlsaPZdWUoHzBB.png" alt="NOC">
+                    <div onclick="openModal('itsm-noc.webp', 'Portal Carrossel NOC')">
+                        <img src="itsm-noc.webp" width="600" height="424" alt="NOC" loading="lazy" decoding="async">
                         <p>Portal Carrossel NOC</p>
                     </div>
-                    <div onclick="openModal('https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/bukzADWJIOoTfZMm.png', 'Zabbix - Monitoramento de Ativos e Redes')">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/bukzADWJIOoTfZMm.png" alt="Zabbix">
+                    <div onclick="openModal('itsm-zabbix.webp', 'Zabbix - Monitoramento de Ativos e Redes')">
+                        <img src="itsm-zabbix.webp" width="600" height="274" alt="Zabbix" loading="lazy" decoding="async">
                         <p>Zabbix Monitoramento</p>
                     </div>
-                    <div onclick="openModal('https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/wkytahcRSLrWIkjN.png', 'Grafana - Dashboards de Performance')">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663158461098/wkytahcRSLrWIkjN.png" alt="Grafana">
+                    <div onclick="openModal('itsm-grafana.webp', 'Grafana - Dashboards de Performance')">
+                        <img src="itsm-grafana.webp" width="600" height="344" alt="Grafana" loading="lazy" decoding="async">
                         <p>Grafana Dashboards</p>
                     </div>
                 </div>
@@ -943,14 +877,13 @@
                         </ul>
                     </div>
                     <div class="project-visual">
-                        <img src="sf - vlan - home.jpeg" alt="ALFA Predial">
+                        <img src="vlan-home.webp" width="1000" height="458" alt="SF-Cyber - tela inicial" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="proj3-imgs">
-                    <img src="sf - vlan - int.jpg" alt="ALFA 2">
-                    <img src="sf - vlan 2.jpg" alt="ALFA 3">
-                    <img src="sf - vlan - cert.jpg" alt="ALFA 4">
-                
+                    <img src="vlan-int.webp" width="800" height="534" alt="SF-Cyber - desafio de interface" loading="lazy" decoding="async">
+                    <img src="vlan-2.webp" width="800" height="534" alt="SF-Cyber - segundo desafio" loading="lazy" decoding="async">
+                    <img src="vlan-cert.webp" width="800" height="534" alt="SF-Cyber - certificado de conclusão" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -1060,186 +993,111 @@
     })();
     </script>
 
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // ---- Three.js Flow Field ----
-        const canvas = document.getElementById('bg-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    (function () {
+        'use strict';
 
-        const count = 2500;
-        const positions = new Float32Array(count * 3);
-        const speeds = [];
-        for (let i = 0; i < count; i++) {
-            positions[i*3] = (Math.random() - 0.5) * 50;
-            positions[i*3+1] = (Math.random() - 0.5) * 50;
-            positions[i*3+2] = (Math.random() - 0.5) * 30;
-            speeds.push({
-                x: (Math.random() - 0.5) * 0.003,
-                y: (Math.random() - 0.5) * 0.003,
-                z: (Math.random() - 0.5) * 0.003,
-            });
-        }
+        /* ---------- Video de fundo: sobe depois que a pagina carrega ---------- */
+        var bgVideo = document.getElementById('bgVideo');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var saveData = navigator.connection && navigator.connection.saveData;
 
-        const geo = new THREE.BufferGeometry();
-        geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-        // Particle texture
-        const ptCanvas = document.createElement('canvas');
-        ptCanvas.width = 64; ptCanvas.height = 64;
-        const ctx = ptCanvas.getContext('2d');
-        const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-        grad.addColorStop(0, 'rgba(0,120,212,0.9)');
-        grad.addColorStop(0.2, 'rgba(0,120,212,0.5)');
-        grad.addColorStop(1, 'rgba(0,120,212,0)');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 64, 64);
-        const texture = new THREE.CanvasTexture(ptCanvas);
-
-        const mat = new THREE.PointsMaterial({
-            size: 0.08,
-            map: texture,
-            transparent: true,
-            opacity: 0.45,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-            color: 0x0078d4,
-            sizeAttenuation: true,
-        });
-        const particles = new THREE.Points(geo, mat);
-        scene.add(particles);
-
-        // Connection lines
-        const linePositions = [];
-        for (let i = 0; i < 150; i++) {
-            const a = Math.floor(Math.random() * count);
-            const b = Math.floor(Math.random() * count);
-            linePositions.push(
-                positions[a*3], positions[a*3+1], positions[a*3+2],
-                positions[b*3], positions[b*3+1], positions[b*3+2]
-            );
-        }
-        const lineGeo = new THREE.BufferGeometry();
-        lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-        const lineMat = new THREE.LineBasicMaterial({
-            color: 0x0078d4,
-            transparent: true,
-            opacity: 0.06,
-        });
-        const lines = new THREE.LineSegments(lineGeo, lineMat);
-        scene.add(lines);
-
-        // Floating geometry
-        const shapes = [];
-        const colors = [0x0078d4, 0x50a6ff, 0x106ebe, 0x0e6ba8];
-        for (let s = 0; s < 8; s++) {
-            const size = Math.random() * 0.4 + 0.1;
-            let geom;
-            const type = Math.random();
-            if (type < 0.33) geom = new THREE.OctahedronGeometry(size);
-            else if (type < 0.66) geom = new THREE.TetrahedronGeometry(size);
-            else geom = new THREE.BoxGeometry(size, size, size);
-            const mesh = new THREE.Mesh(
-                geom,
-                new THREE.MeshBasicMaterial({
-                    color: colors[s % colors.length],
-                    transparent: true,
-                    opacity: Math.random() * 0.06 + 0.02,
-                    wireframe: Math.random() > 0.5,
-                })
-            );
-            mesh.position.set(
-                (Math.random() - 0.5) * 12,
-                (Math.random() - 0.5) * 8,
-                (Math.random() - 0.5) * 8 - 4
-            );
-            mesh.userData = {
-                rotSpeed: { x: (Math.random() - 0.5) * 0.02, y: (Math.random() - 0.5) * 0.02, z: (Math.random() - 0.5) * 0.02 },
-                floatSpeed: Math.random() * 0.005 + 0.002,
-                floatOffset: Math.random() * Math.PI * 2,
-                startY: mesh.position.y,
+if (bgVideo) {
+            var showVideo = function () {
+                bgVideo.classList.add('ready');
             };
-            scene.add(mesh);
-            shapes.push(mesh);
-        }
+            bgVideo.addEventListener('playing', showVideo, { once: true });
+            bgVideo.addEventListener('canplay', showVideo, { once: true });
 
-        camera.position.z = 10;
-
-        let mx = 0, my = 0;
-        document.addEventListener('mousemove', (e) => {
-            mx = (e.clientX / window.innerWidth - 0.5) * 2;
-            my = (e.clientY / window.innerHeight - 0.5) * 2;
-        });
-
-        const clock = new THREE.Clock();
-
-        function animate() {
-            requestAnimationFrame(animate);
-            const t = clock.getElapsedTime();
-
-            // Float particles
-            const pos = geo.attributes.position.array;
-            for (let i = 0; i < count; i++) {
-                pos[i*3] += speeds[i].x;
-                pos[i*3+1] += speeds[i].y;
-                pos[i*3+2] += speeds[i].z;
-                if (pos[i*3] > 25) pos[i*3] = -25;
-                if (pos[i*3] < -25) pos[i*3] = 25;
-                if (pos[i*3+1] > 25) pos[i*3+1] = -25;
-                if (pos[i*3+1] < -25) pos[i*3+1] = 25;
-                if (pos[i*3+2] > 15) pos[i*3+2] = -15;
-                if (pos[i*3+2] < -15) pos[i*3+2] = 15;
+            var startVideo = function () {
+                if (reduceMotion || saveData) return;
+                var p = bgVideo.play();
+                if (p && p.catch) p.catch(function () { /* autoplay bloqueado: poster permanece */ });
+            };
+            if (document.readyState === 'complete') {
+                startVideo();
+            } else {
+                window.addEventListener('load', startVideo, { once: true });
             }
-            geo.attributes.position.needsUpdate = true;
-            particles.rotation.y += 0.0002;
-            lines.rotation.y += 0.0002;
 
-            // Shapes float
-            shapes.forEach((mesh) => {
-                mesh.rotation.x += mesh.userData.rotSpeed.x;
-                mesh.rotation.y += mesh.userData.rotSpeed.y;
-                mesh.rotation.z += mesh.userData.rotSpeed.z;
-                mesh.position.y = mesh.userData.startY + Math.sin(t * mesh.userData.floatSpeed * 10 + mesh.userData.floatOffset) * 0.4;
-            });
-
-            // Parallax
-            particles.position.x += (mx * 0.15 - particles.position.x) * 0.015;
-            particles.position.y += (-my * 0.15 - particles.position.y) * 0.015;
-            lines.position.copy(particles.position);
-            shapes.forEach(m => {
-                m.position.x += (mx * 0.3 - (m.position.x - m.userData.startX || 0)) * 0.005;
-            });
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // ---- Scroll Reveal ----
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('vis');
+            /* para o video quando a aba nao esta visivel (economiza CPU/GPU) */
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    if (!bgVideo.paused) bgVideo.pause();
+                } else {
+                    startVideo();
                 }
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
-        // Hero immediate
-        document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('vis'));
+        }
 
-        // ---- Modal ----
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modalImg');
-        const modalCap = document.getElementById('modalCap');
+        /* ---------- Navegacao por secao (setas) ---------- */
+        var sections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+        var nav = document.getElementById('sectionNav');
+        var prevBtn = document.getElementById('sectionPrev');
+        var nextBtn = document.getElementById('sectionNext');
+        var current = 0;
+
+        function nearestSection() {
+            var line = window.innerHeight * 0.4;
+            var best = 0;
+            sections.forEach(function (el, i) {
+                if (el.getBoundingClientRect().top <= line) best = i;
+            });
+            return best;
+        }
+
+        function goTo(i) {
+            if (!sections.length) return;
+            var target = Math.max(0, Math.min(sections.length - 1, i));
+            current = target;
+            sections[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        if (nav && prevBtn && nextBtn && sections.length) {
+            prevBtn.addEventListener('click', function () { goTo(current - 1); });
+            nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+            var sync = function () {
+                current = nearestSection();
+                nav.classList.add('visible');
+            };
+
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(function () {
+                    sync();
+                    ticking = false;
+                });
+            }, { passive: true });
+            window.addEventListener('resize', sync);
+            sync();
+        }
+
+        /* ---------- Scroll Reveal ---------- */
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('vis');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+                observer.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+                el.classList.add('vis');
+            });
+        }
+
+        /* ---------- Modal ---------- */
+        var modal = document.getElementById('modal');
+        var modalImg = document.getElementById('modalImg');
+        var modalCap = document.getElementById('modalCap');
 
         function openModal(src, caption) {
             modal.classList.add('open');
@@ -1249,31 +1107,37 @@
         }
         function closeModal() {
             modal.classList.remove('open');
+            modalImg.removeAttribute('src');
             document.body.style.overflow = '';
         }
-        modal.addEventListener('click', (e) => {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) closeModal();
         });
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeModal();
         });
 
-        // ---- Nav scroll ----
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 100);
-        });
+        /* ---------- Nav scroll ---------- */
+        var navbar = document.getElementById('navbar');
+        var navTicking = false;
+        window.addEventListener('scroll', function () {
+            if (navTicking) return;
+            navTicking = true;
+            window.requestAnimationFrame(function () {
+                navbar.classList.toggle('scrolled', window.scrollY > 100);
+                navTicking = false;
+            });
+        }, { passive: true });
 
-        // ---- Smooth scroll ----
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
+        /* ---------- Smooth scroll ---------- */
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
                 e.preventDefault();
-                const t = document.querySelector(this.getAttribute('href'));
+                var t = document.querySelector(this.getAttribute('href'));
                 if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        console.log('SF Portfolio v2 loaded');
+    })();
     </script>
 </body>
 </html>
