@@ -18,8 +18,8 @@
 </div>
 
 ---
-
 Atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegurança e Automação**.
+
 ---
 
 ## 🎓 Formação & Foco
