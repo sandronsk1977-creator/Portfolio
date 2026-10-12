@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="/img/banner-dark_sf_v.svg" alt="Sandro Ferreira • Profissional de TI" width="100%">
+<img src="/img/banner_dark_sf_v.svg" alt="Sandro Ferreira • Profissional de TI" width="100%">
 
 <br> 
 <br>
