@@ -470,6 +470,15 @@
             border-color: rgba(0,120,212,0.2);
         }
 
+        /* grade do Projeto 3: a 1a coluna (quadrada) fica com a trilha de
+           aprendizagem, a 2a (panoramica) ocupa o dobro de largura com a topologia */
+        .proj3-imgs.p3-grid {
+            grid-template-columns: 1fr 2fr;
+        }
+        @media (max-width: 768px) {
+            .proj3-imgs.p3-grid { grid-template-columns: 1fr; }
+        }
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -629,6 +638,18 @@
         }
 
         /* Animations */
+        /* Cartoes de projeto entram deslizando de lado (movimento horizontal),
+           alternando a direcao para dar ritmo a rolagem. */
+        .slide-card {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .slide-card.from-left  { transform: translateX(-70px); }
+        .slide-card.from-right { transform: translateX(70px); }
+        .slide-card.vis { opacity: 1; transform: translateX(0); }
+
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -823,7 +844,7 @@
             <div class="reveal" style="transition-delay:0.1s"><p class="sec-desc">Soluções desenvolvidas para monitoramento, gestão de serviços e automação de processos.</p></div>
 
             <!-- Projeto 1 -->
-            <div class="reveal" style="transition-delay:0.15s;margin-top:3rem">
+            <div class="slide-card from-right" style="transition-delay:0.15s;margin-top:3rem">
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Projeto 1 <span>&#9755;</span> Portal de Monitoramento ITSM</h3>
@@ -863,21 +884,20 @@
             <div class="project-divider" role="separator" aria-hidden="true"></div>
 
             <!-- Projeto 2 -->
-            <div class="reveal" style="transition-delay:0.2s">
+            <div class="slide-card from-left" style="transition-delay:0.2s">
                 <div class="project-card reversed">
                     <div class="project-info">
                         <h3>Projeto 2 <span>&#9755;</span> 🛡️ Projeto SF Cyber 📚 Academia Cibersegurança e Redes</h3>
                         <p>Simulador interativo e educativo de um switch Cisco. Aprender redes pode ser muito mais do que teoria. Com o simulador interativo de Switch Cisco, os alunos praticam VLANs usando comandos reais, avançam por desafios progressivos e desenvolvem habilidades de configuração em um ambiente gamificado 🧪 e sem precisar de equipamentos físicos.</p>
                         <div class="about-card" style="margin-bottom:1rem;padding:1.2rem">
-                            <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">🛡️ Projeto SF Cyber - Academia CiberSegurança e Redes</h4>
-                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🎓 Uso educacional • Sinta-se livre para usar e modificar para fins de ensino e aprendizado! </p>
-                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🤖 Assistente virtual (SF Bot) • SF Bot Curadoria inteligente em sua jornada.</p>
-                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🧭 08 níveis progressivos • Com desafios passo a passo.</p>
+                            <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">📚 Simulador interativo de switch Cisco</h4>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🎓 Uso educacional • 08 níveis progressivos com desafios passo a passo.</p>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🤖 Assistente virtual (SF Bot) com curadoria inteligente em sua jornada.</p>
                             <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🌐 Faça seu teste...<a href="https://sfcyber.projetosdisruptivos.com.br/"
        target="_blank"
        rel="noopener noreferrer"
        style="color:#0078d4;text-decoration:none;font-weight:600;">
-       🖱️ Acesse o labboratório e conquiste o certificado 🎓🏆
+       🖱️ Acesse o laboratório e conquiste o certificado 🎓🏆
     </a>
 </p>
                         </div>
@@ -894,6 +914,42 @@
                     <img src="vlan-int.webp" width="800" height="534" alt="SF-Cyber - desafio de interface" loading="lazy" decoding="async">
                     <img src="vlan-2.webp" width="800" height="534" alt="SF-Cyber - segundo desafio" loading="lazy" decoding="async">
                     <img src="vlan-cert.webp" width="800" height="534" alt="SF-Cyber - certificado de conclusão" loading="lazy" decoding="async">
+                </div>
+            </div>
+
+            <div class="project-divider" role="separator" aria-hidden="true"></div>
+
+            <!-- Projeto 3 -->
+            <div class="slide-card from-left" style="transition-delay:0.2s">
+                <div class="project-card reversed">
+                    <div class="project-info">
+                        <h3>Projeto 3 <span>&#9755;</span> 🧩 Laboratório Virtual Cisco Packet Tracer</h3>
+                        <p>Laboratório virtual interativo para executar comandos e cumprir os desafios de redes. Segmentar uma empresa em 03 departamentos (TI, RH e Marketing) com VLANs, DHCP e Inter-VLAN Routing.</p>
+                        <div class="about-card" style="margin-bottom:1rem;padding:1.2rem">
+                            <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">📚 Laboratório prático de VLANs, Inter-VLAN Routing e DHCP</h4>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🔀 Segmentação de rede para os departamentos de TI, RH e Marketing.</p>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🌐 Faça seu teste...<a href="https://desafiovlan.projetosdisruptivos.com.br/"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="color:#0078d4;text-decoration:none;font-weight:600;">
+       🖱️ Acesse o projeto e conquiste o certificado 🎓🏆
+    </a>
+</p>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-network-wired" style="margin-right:4px"></i> Segmentação em VLANs por departamento</li>
+                            <li><i class="fas fa-right-left" style="margin-right:4px"></i> Inter-VLAN Routing com sub-interfaces no roteador</li>
+                            <li><i class="fas fa-server" style="margin-right:4px"></i> DHCP distribuído pelo próprio roteador</li>
+                        </ul>
+                    </div>
+                    <div class="project-visual">
+                        <img src="lab-aula01.webp" width="1200" height="676" alt="Laboratório virtual com VLAN, Inter-VLAN Routing e DHCP" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <div class="proj3-imgs p3-grid">
+                    <img src="lab-aula-pratica.webp" width="1200" height="1200" alt="Trilha de aprendizado em 4 etapas: VLANs, Inter-VLAN Routing, DHCP e validação" loading="lazy" decoding="async">
+                    <img src="topologia-vlan.webp" width="1200" height="600" alt="Topologia simulada com R1, switch núcleo SW4 e as VLANs 10, 20 e 30" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -995,6 +1051,7 @@ if (bgVideo) {
         }
 
         /* ---------- Scroll Reveal ---------- */
+        var revealTargets = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .slide-card';
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
@@ -1004,11 +1061,11 @@ if (bgVideo) {
                     }
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+            document.querySelectorAll(revealTargets).forEach(function (el) {
                 observer.observe(el);
             });
         } else {
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+            document.querySelectorAll(revealTargets).forEach(function (el) {
                 el.classList.add('vis');
             });
         }

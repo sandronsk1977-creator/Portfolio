@@ -280,6 +280,7 @@ body.hero-dark.modal-open { overflow: hidden; }
     .reveal-left,
     .reveal-right,
     .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .slide-card { opacity: 1 !important; transform: none !important; transition: none !important; }
     body.hero-dark .social,
     body.hero-dark .hero-dark-skills i,
     body.hero-dark .skill-icon,
