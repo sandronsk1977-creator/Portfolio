@@ -92,7 +92,7 @@ Atuação em **ITSM, Infraestrutura, Redes, Servidores, Monitoramento, CiberSegu
 
 ---
 
-## 🚀 Projetos em Destaque
+## 🎮 Projetos em Destaque
 
 ### 🌐 Portfolio
 
