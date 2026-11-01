@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7GR6X1BG3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L7GR6X1BG3');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Sandro Ferreira">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050b18">
+    <title>Sandro Ferreira | Zabbix, Infraestrutura, Redes, CyberSec e Automação IA</title>
+    <link rel="icon" href="favicon-sf-red.png" type="image/png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="hero-poster.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hero-dark.css">
+    <link rel="stylesheet" href="dark-datacenter.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #fafbfc;
+            color: #323130;
+            overflow-x: hidden;
+        }
+        html { scroll-behavior: smooth; }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 1rem; left: 50%; transform: translateX(-50%);
+            z-index: 100;
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            background: rgba(5,11,24,0.92);
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+        }
+        nav.scrolled {
+            background: rgba(255,255,255,0.92);
+            border-color: rgba(0,120,212,0.2);
+            box-shadow: 0 4px 30px rgba(0,120,212,0.12);
+        }
+        .nav-link {
+            color: rgba(50,49,48,0.55);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #0067b8;
+            background: rgba(0,120,212,0.08);
+        }
+
+        /* Hero */
+        #hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.35rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, rgba(0,120,212,0.10), rgba(50,172,255,0.10));
+            border: 1px solid rgba(0,120,212,0.2);
+            color: #0067b8;
+            margin-bottom: 1.5rem;
+        }
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        .hero-title .line1 {
+            display: block;
+            background: linear-gradient(135deg, #323130 0%, #605e5c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title .line2 {
+        font-size: 90%; /* ou o valor que quiser */
+        }
+
+        .hero-title .line2 {
+            display: block;
+            background: linear-gradient(135deg, #0078d4, #50a6ff, #106ebe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+        @keyframes gradientShift {
+            0%,100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: rgba(0,120,212,0.05);
+            border: 1px solid rgba(0,120,212,0.15);
+            color: rgba(50,49,48,0.65);
+        }
+        .hero-meta span i { color: #0078d4; font-size: 0.65rem; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, #0078d4, #106ebe);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(0,120,212,0.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 50px rgba(0,120,212,0.4);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: #ffffff;
+            border: 1px solid rgba(0,120,212,0.25);
+            color: #0067b8;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(0,120,212,0.5);
+            color: #0067b8;
+            background: rgba(0,120,212,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section { position: relative; z-index: 1; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .sec-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #5cc0ff;
+        }
+        .sec-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: #201f1e;
+        }
+        .sec-desc {
+            color: rgba(50,49,48,0.6);
+            max-width: 560px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2.5rem;
+        }
+        .profile-wrap {
+            position: relative;
+            display: inline-block;
+            /* o anel giratorio nao pode vazar: porem overflow:hidden cortaria
+               o proprio anel (ele vive em inset negativo), entao o anel e
+               mantido dentro do proprio formato — ver animacao abaixo */
+        }
+
+        .profile-wrap img {
+            width: 100%;
+            max-width: 240px;
+            /* height:auto e obrigatorio: sem isso o atributo height="526" do
+               HTML vira altura fixae a imagem e esticada */
+            height: auto;
+            aspect-ratio: auto; /* Mantém uma proporção equilibrada sem esticar */
+            object-fit: contain;
+            border-radius: 1.5rem;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+            /* Anel giratorio: anima o ANGULO do conic-gradient em vez de girar o
+           elemento. Girar um retangulo nao quadrado faz os cantos escaparem
+           da caixa (era o que aparecia como aba azul torta ao redor da foto). */
+        @property --ring-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .profile-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 1.8rem;
+            background: conic-gradient(from var(--ring-angle), #0078d4, #50a6ff, #106ebe, #0078d4);
+            z-index: 0;
+            animation: spinBorder 4s linear infinite;
+        }
+        .profile-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 1.7rem;
+            background: #fafbfc;
+            z-index: 0;
+        }
+        @keyframes spinBorder {
+            to { --ring-angle: 360deg; }
+        }
+        /* fallback: sem suporte a @property, o anel fica estatico (angular 0deg) */
+        @supports not (background: conic-gradient(from var(--ring-angle), red, blue)) {
+            .profile-wrap::before { animation: none; }
+        }
+        .about-card {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.4s;
+        }
+        .about-card:hover {
+            border-color: rgba(0,120,212,0.2);
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0,120,212,0.08);
+        }
+        .about-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #201f1e;
+        }
+        .about-card h3 i { color: #0078d4; }
+        .about-card p {
+            color: rgba(50,49,48,0.65);
+            line-height: 1.7;
+            font-size: 0.92rem;
+        }
+        .about-card strong { color: #0078d4; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .highlight-item {
+            padding: 1.2rem;
+            border-radius: 1rem;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .highlight-item:hover {
+            border-color: rgba(0,120,212,0.2);
+            background: rgba(0,120,212,0.03);
+        }
+        .highlight-item i { color: #0078d4; margin-bottom: 0.5rem; font-size: 1rem; }
+        .highlight-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; color: #201f1e; }
+        .highlight-item p { font-size: 0.8rem; color: rgba(50,49,48,0.55); }
+
+        /* Projects */
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.5s;
+        }
+        .project-card:hover {
+            border-color: rgba(0,120,212,0.2);
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0,120,212,0.1);
+        }
+        .project-card.reversed { direction: rtl; }
+        .project-card.reversed > * { direction: ltr; }
+        .project-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #0078d4, #50a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-info p {
+            color: rgba(50,49,48,0.65);
+            line-height: 1.7;
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+        .project-info ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .project-info ul li {
+            font-size: 0.78rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            background: rgba(0,120,212,0.07);
+            border: 1px solid rgba(0,120,212,0.15);
+            color: rgba(50,49,48,0.7);
+        }
+        .project-visual {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .project-visual img {
+            width: 100%;
+            height: auto; /* preserva a proporcao (atributo height do HTML) */
+            display: block;
+            transition: transform 0.6s;
+        }
+        .project-visual:hover img { transform: scale(1.03); }
+        .project-visual .zoom {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,60,100,0.25);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+        .project-visual:hover .zoom { opacity: 1; }
+        .project-visual .zoom i { color: #fff; font-size: 1.5rem; }
+
+        .project-thumbs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .project-thumbs > div {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.3s;
+        }
+        .project-thumbs > div:hover {
+            border-color: rgba(0,120,212,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,120,212,0.1);
+        }
+        .project-thumbs img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            display: block;
+        }
+        .project-thumbs p {
+            font-size: 0.7rem;
+            text-align: center;
+            padding: 0.4rem;
+            color: rgba(50,49,48,0.55);
+        }
+
+        .project-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,120,212,0.2), rgba(80,166,255,0.2), transparent);
+            margin: 3rem 0;
+        }
+
+        /* Project 3 grid */
+        .proj3-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .proj3-imgs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .proj3-imgs img {
+            width: 100%;
+            height: auto; /* preserva a proporcao (atributo height do HTML) */
+            border-radius: 0.75rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.07);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .proj3-imgs img:hover {
+            transform: scale(1.02);
+            border-color: rgba(0,120,212,0.2);
+        }
+
+        /* grade do Projeto 3: a 1a coluna (quadrada) fica com a trilha de
+           aprendizagem, a 2a (panoramica) ocupa o dobro de largura com a topologia */
+        .proj3-imgs.p3-grid {
+            grid-template-columns: 1fr 2fr;
+        }
+        @media (max-width: 768px) {
+            .proj3-imgs.p3-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+        .skill-item {
+            padding: 1.5rem;
+            border-radius: 1.2rem;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, #0078d4, #50a6ff);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .skill-item:hover::before { opacity: 1; }
+        .skill-item:hover {
+            border-color: rgba(0,120,212,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,120,212,0.12);
+        }
+        .skill-icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #0078d4, #50a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .skill-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #201f1e;
+        }
+        .skill-item p {
+            font-size: 0.82rem;
+            color: rgba(50,49,48,0.6);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #ffffff;
+        }
+        .social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0,120,212,0.2);
+            color: #0078d4;
+            font-size: 1.1rem;
+            margin: 0 0.4rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .social:hover {
+            background: #0078d4;
+            border-color: #0078d4;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,120,212,0.3);
+        }
+
+        /* Social rail (selos verticais) */
+        .social-rail {
+            position: fixed;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            z-index: 90;
+        }
+        .social-rail .social {
+            margin: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            animation: sealPulse 1.6s ease-in-out infinite;
+        }
+        .social-rail .social:hover {
+            animation: sealHover 0.5s ease;
+        }
+        @keyframes sealHover {
+            0% { transform: rotate(0) scale(1); }
+            35% { transform: rotate(-8deg) scale(1.15); }
+            70% { transform: rotate(6deg) scale(1.1); }
+            100% { transform: rotate(0) scale(1.05); }
+        }
+        @keyframes sealPulse {
+            0%,100% { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 0 rgba(0,120,212,0.45); }
+            50% { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 14px rgba(0,120,212,0); }
+        }
+        @media (max-width: 760px) {
+            .social-rail {
+                right: 0.75rem;
+                gap: 0.5rem;
+            }
+            .social-rail .social {
+                width: 38px; height: 38px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.72);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .modal.open { display: flex; }
+        .modal img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .modal .close {
+            position: absolute;
+            top: 1.5rem; right: 2rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .modal .close:hover { color: #fff; }
+        .modal .cap {
+            text-align: center;
+            color: #f3f9ff;
+            padding-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        /* Cartoes de projeto entram deslizando de lado (movimento horizontal),
+           alternando a direcao para dar ritmo a rolagem. */
+        .slide-card {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .slide-card.from-left  { transform: translateX(-70px); }
+        .slide-card.from-right { transform: translateX(70px); }
+        .slide-card.vis { opacity: 1; transform: translateX(0); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.vis { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.vis { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.vis { opacity: 1; transform: translateX(0); }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.vis { opacity: 1; transform: scale(1); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0f2f4; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#0078d4, #50a6ff); border-radius: 4px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .project-card { grid-template-columns: 1fr; }
+            .project-card.reversed { direction: ltr; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .project-thumbs { grid-template-columns: repeat(2, 1fr); }
+            .proj3-grid { grid-template-columns: 1fr; }
+            .proj3-imgs { grid-template-columns: 1fr 1fr; }
+            .about-highlights { grid-template-columns: 1fr; }
+            nav { top: 0.5rem; padding: 0.4rem 1rem; }
+            .nav-link { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+            .container { padding: 3.5rem 1.25rem; }
+        }
+        @media (max-width: 500px) {
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="hero-dark">
+
+    <!-- Video de fundo (fundo fixo da pagina inteira) -->
+    <div class="dc-scene" aria-hidden="true">
+        <video class="dc-video" id="bgVideo" src="smart4.mp4" poster="hero-poster.jpg" muted loop playsinline preload="none"></video>
+        <div class="dc-video-tint"></div>
+        <div class="dc-vignette"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link">Início</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#competencias" class="nav-link">Competências</a>
+        </div>
+    </nav>
+
+    <!-- Social rail (selos) -->
+    <div id="socialRail" class="social-rail">
+        <a href="https://github.com/sandronsk1977-creator/" class="social" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sf-cyber-academia-digital-8725b9443/" class="social" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=5562984498565&text=O%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%AD%E2%81%A3%E2%81%A6%E2%81%A2%CD%8F%E2%81%A8%E2%81%A6%E2%81%A8%E2%80%AA%E2%81%A0%CD%8F%E2%81%AB%E2%81%A3%E2%81%A3%E2%81%AB%E2%81%A6%E2%81%A3%E2%81%AA%E2%81%AA%E2%81%A4%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%ADl%C3%A1%2C+vim+atrav%C3%A9s+da+p%C3%A1gina+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+você&type=phone_number&app_absent=0" class="social" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Hero -->
+    <section id="inicio">
+        <!-- HERO ESCURO (Figura 2) -->
+        <div id="hero">
+            <div class="hero-globe" aria-hidden="true">
+                <div class="globe-halo"></div>
+                <svg viewBox="0 0 600 600" role="presentation">
+                    <defs>
+                        <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#1f7ad4" stop-opacity=".28"/>
+                            <stop offset="100%" stop-color="#1f7ad4" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <circle cx="300" cy="300" r="272" fill="url(#gCore)"/>
+                    <g class="globe-arc">
+                        <circle cx="300" cy="300" r="272"/>
+                        <circle cx="300" cy="300" r="228"/>
+                        <circle cx="300" cy="300" r="184"/>
+                        <circle cx="300" cy="300" r="140"/>
+                        <circle cx="300" cy="300" r="96"/>
+                        <circle cx="300" cy="300" r="52"/>
+                        <ellipse cx="300" cy="300" rx="272" ry="110"/>
+                        <ellipse cx="300" cy="300" rx="272" ry="200"/>
+                        <ellipse cx="300" cy="300" rx="110" ry="272"/>
+                        <ellipse cx="300" cy="300" rx="200" ry="272"/>
+                        <ellipse cx="300" cy="300" rx="52" ry="272"/>
+                    </g>
+                    <g class="globe-arc" opacity=".5">
+                        <path d="M28 300 H572"/>
+                        <path d="M72 190 C170 214 430 214 528 190"/>
+                        <path d="M72 410 C170 386 430 386 528 410"/>
+                    </g>
+                    <g class="globe-link">
+                        <path d="M150 190 L262 268 L392 214 L470 320"/>
+                        <path d="M118 344 L262 268 L330 400"/>
+                        <path d="M262 268 L470 320 L510 430"/>
+                    </g>
+                    <g class="globe-dot">
+                        <circle cx="150" cy="190" r="3.6"/><circle cx="262" cy="268" r="4.4"/>
+                        <circle cx="392" cy="214" r="3.2"/><circle cx="470" cy="320" r="4.2"/>
+                        <circle cx="118" cy="344" r="3"/><circle cx="330" cy="400" r="3.6"/>
+                        <circle cx="510" cy="430" r="3"/><circle cx="210" cy="452" r="3.2"/>
+                        <circle cx="430" cy="120" r="3"/><circle cx="96"  cy="250" r="2.8"/>
+                        <circle cx="366" cy="500" r="3.2"/><circle cx="520" cy="212" r="2.8"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="hero-dark-inner">
+                <span class="hero-dark-eyebrow">Portfólio Profissional</span>
+                <h1 class="hero-dark-title">
+                    Sandro <span class="accent">Ferreira</span>
+                </h1>
+                <p class="hero-dark-lead">
+                    Transformando Dados em Soluções
+                </p>
+
+                <ul class="hero-dark-skills">
+                    <li><i class="fas fa-chart-bar"></i> Monitoramento</li>
+                    <li><i class="fas fa-server"></i> Infraestrutura</li>
+                    <li><i class="fas fa-project-diagram"></i> Redes</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança</li>
+                    <li><i class="fas fa-cog"></i> Automação</li>
+                </ul>
+
+                <div class="hero-dark-cta">
+                    <a href="#projetos" class="btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+                    <a href="#competencias" class="btn-secondary"><i class="fas fa-code"></i> Minhas Skills</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <div class="container">
+            <div class="reveal"><p class="sec-label">Sobre Mim</p></div>
+            <div class="reveal" style="transition-delay:0.05s"><h2 class="sec-title">Apresentação</h2></div>
+
+            <div class="about-grid">
+                <div class="reveal-left" style="transition-delay:0.1s">
+                    <div class="profile-wrap">
+                        <img src="perfil.webp" width="480" height="526" alt="Sandro Ferreira" decoding="async">
+                    </div>
+                </div>
+                <div class="reveal-right" style="transition-delay:0.15s">
+                    <div class="about-card">
+                        <h3><i class="fas fa-briefcase"></i> Atuação Atual</h3>
+                        <p>
+                            Atuação técnica em <strong>ambientes críticos e de alta disponibilidade</strong>, conduzindo o acompanhamento de <strong>incidentes, problemas e mudanças</strong> e apoiando a continuidade operacional e a melhoria contínua dos processos e serviços de TI.
+                        </p>
+                        <p style="margin-top:0.75rem">
+                            Ação integrada com o time da <strong>GPTI ALFA Educação</strong>, fortalecendo a colaboração entre as equipes e contribuindo para a <strong>estabilidade, disponibilidade, eficiência e qualidade da operação de TI</strong>.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-server"></i>
+                            <h4>Ambientes Críticos</h4>
+                            <p>Estabilidade e performance de links, servidores e backups para alta disponibilidade.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Monitoramento de Apps</h4>
+                            <p>Gestão proativa de serviços e aplicações para continuidade do negócio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos">
+        <div class="container">
+            <div class="reveal"><p class="sec-label">Portfólio</p></div>
+            <div class="reveal" style="transition-delay:0.05s"><h2 class="sec-title">Projetos em Destaque</h2></div>
+            <div class="reveal" style="transition-delay:0.1s"><p class="sec-desc">Soluções desenvolvidas para monitoramento, gestão de serviços e automação de processos.</p></div>
+
+            <!-- Projeto 1 -->
+            <div class="slide-card from-right" style="transition-delay:0.15s;margin-top:3rem">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Projeto 1 <span>&#9755;</span> Portal de Monitoramento ITSM</h3>
+                        <p>O Portal de Monitoramento ITSM centraliza o acesso com as principais ferramentas da equipe de TI. A solução reúne consulta ao Active Directory, indicadores de desempenho, monitoramento de ativos e visualização NOC.</p>
+                        <ul>
+                            <li><strong style="color:#0078d4">Painel AD</strong> Gestão eficiente de usuários</li>
+                            <li><strong style="color:#0078d4">Portal Carrossel</strong> Dashboards para Smart TV / NOC</li>
+                            <li><strong style="color:#0078d4">Zabbix</strong> Monitoramento de ativos críticos</li>
+                            <li><strong style="color:#0078d4">Grafana</strong> Performance e certificados SSL</li>
+                        </ul>
+                    </div>
+                    <div class="project-visual" onclick="openModal('itsm-portal.webp', 'Portal de Monitoramento ITSM')">
+                        <img src="itsm-portal.webp" width="1100" height="454" alt="Portal ITSM" loading="lazy" decoding="async">
+                        <div class="zoom"><i class="fas fa-expand"></i></div>
+                    </div>
+                </div>
+                <div class="project-thumbs">
+                    <div onclick="openModal('itsm-ad.webp', 'Painel AD - Gestão de Usuários')">
+                        <img src="itsm-ad.webp" width="600" height="334" alt="Painel AD" loading="lazy" decoding="async">
+                        <p>Painel AD</p>
+                    </div>
+                    <div onclick="openModal('itsm-noc.webp', 'Portal Carrossel NOC')">
+                        <img src="itsm-noc.webp" width="600" height="424" alt="NOC" loading="lazy" decoding="async">
+                        <p>Portal Carrossel NOC</p>
+                    </div>
+                    <div onclick="openModal('itsm-zabbix.webp', 'Zabbix - Monitoramento de Ativos e Redes')">
+                        <img src="itsm-zabbix.webp" width="600" height="274" alt="Zabbix" loading="lazy" decoding="async">
+                        <p>Zabbix Monitoramento</p>
+                    </div>
+                    <div onclick="openModal('itsm-grafana.webp', 'Grafana - Dashboards de Performance')">
+                        <img src="itsm-grafana.webp" width="600" height="344" alt="Grafana" loading="lazy" decoding="async">
+                        <p>Grafana Dashboards</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-divider" role="separator" aria-hidden="true"></div>
+
+            <!-- Projeto 2 -->
+            <div class="slide-card from-left" style="transition-delay:0.2s">
+                <div class="project-card reversed">
+                    <div class="project-info">
+                        <h3>Projeto 2 <span>&#9755;</span> 🛡️ Projeto SF Cyber 📚 Academia Cibersegurança e Redes</h3>
+                        <p>Projeto voltado para Cybersecurity e Redes, com uma plataforma de simulação prática: switch Cisco para criação de VLANs, análise SOC, segurança web (SQLi e XSS) e servidor DNS. Cada simulador tem 8 níveis, avaliação final e certificado de conclusão.</p>
+                        <div class="about-card" style="margin-bottom:1rem;padding:1.2rem">
+                            <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">🎮 Laboratórios para desenvolvimento prático</h4>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🎓 Uso educacional • 08 níveis progressivos com desafios</p>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🤖 Assistente virtual (SF Bot) com curadoria inteligente em sua jornada</p>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🌐 Faça seu teste<a href="https://sfcyber.projetosdisruptivos.com.br/"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="color:#0078d4;text-decoration:none;font-weight:600;">
+       🖱️ Acesse o laboratório e conquiste o certificado🏆
+    </a>
+</p>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-tools" style="margin-right:4px"></i> Open Source para GAMIFICAÇÃO</li>
+                            <li><i class="fas fa-chart-line" style="margin-right:4px"></i> Inovação no aprendizado dos Alunos</li>
+                        </ul>
+                    </div>
+                    <div class="project-visual">
+                        <img src="vlan-home.webp" width="1000" height="458" alt="SF-Cyber - tela inicial" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="proj3-imgs">
+                    <img src="vlan-int.webp" width="800" height="534" alt="SF-Cyber - desafio de interface" loading="lazy" decoding="async">
+                    <img src="vlan-2.webp" width="800" height="534" alt="SF-Cyber - segundo desafio" loading="lazy" decoding="async">
+                    <img src="vlan-cert.webp" width="800" height="534" alt="SF-Cyber - certificado de conclusão" loading="lazy" decoding="async">
+                </div>
+            </div>
+
+            <div class="project-divider" role="separator" aria-hidden="true"></div>
+
+            <!-- Projeto 3 -->
+            <div class="slide-card from-left" style="transition-delay:0.2s">
+                <div class="project-card reversed">
+                    <div class="project-info">
+                        <h3>Projeto 3 <span>&#9755;</span> 🧩 Laboratório Virtual Cisco Packet Tracer</h3>
+                        <p>Laboratório virtual interativo para executar comandos e cumprir os desafios de redes. Segmentar uma empresa em 03 departamentos (TI, RH e Marketing) com VLANs, DHCP e Inter-VLAN Routing.</p>
+                        <div class="about-card" style="margin-bottom:1rem;padding:1.2rem">
+                            <h4 style="font-size:0.9rem;font-weight:600;color:#0078d4;margin-bottom:0.4rem">📚 Laboratório prático de VLANs, Inter-VLAN Routing e DHCP</h4>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🔀 Segmentação de rede para os departamentos de TI, RH e Marketing.</p>
+                            <p style="font-size:0.85rem;color:rgba(50,49,48,0.65)">🌐 Faça seu teste<a href="https://desafiovlan.projetosdisruptivos.com.br/"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="color:#0078d4;text-decoration:none;font-weight:600;">
+       🖱️ Acesse o projeto e conquiste o certificado 🏆
+    </a>
+</p>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-network-wired" style="margin-right:4px"></i> Segmentação em VLANs por departamento</li>
+                            <li><i class="fas fa-right-left" style="margin-right:4px"></i> Inter-VLAN Routing com sub-interfaces no roteador</li>
+                            <li><i class="fas fa-server" style="margin-right:4px"></i> DHCP distribuído pelo próprio roteador</li>
+                        </ul>
+                    </div>
+                    <div class="project-visual">
+                        <img src="lab-aula01.webp" width="1200" height="676" alt="Laboratório virtual com VLAN, Inter-VLAN Routing e DHCP" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <div class="proj3-imgs p3-grid">
+                    <img src="lab-aula-pratica.webp" width="1200" height="1200" alt="Trilha de aprendizado em 4 etapas: VLANs, Inter-VLAN Routing, DHCP e validação" loading="lazy" decoding="async">
+                    <img src="topologia-vlan.webp" width="1200" height="600" alt="Topologia simulada com R1, switch núcleo SW4 e as VLANs 10, 20 e 30" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competências -->
+    <section id="competencias">
+        <div class="container">
+            <div class="reveal"><p class="sec-label">Habilidades</p></div>
+            <div class="reveal" style="transition-delay:0.05s"><h2 class="sec-title">Destaques Técnicos</h2></div>
+            <div class="reveal" style="transition-delay:0.1s"><p class="sec-desc">Expertise em infraestrutura, monitoramento, automação e gestão de serviços de TI.</p></div>
+
+            <div class="skills-grid">
+                <div class="skill-item reveal-scale" style="transition-delay:0s">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h4>Infraestrutura & Cloud</h4>
+                    <p>Administração de Data Center • Firewalls • Servidores Físicos e Virtuais • Switches L2/L3 • Backups • Cloud Azure e AWS.</p>
+                </div>
+                <div class="skill-item reveal-scale" style="transition-delay:0.05s">
+                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h4>Monitoramento ITSM</h4>
+                    <p>Expertise em Zabbix e Grafana para criação de dashboards operacionais e painéis executivos.</p>
+                </div>
+                <div class="skill-item reveal-scale" style="transition-delay:0.1s">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h4>Automação com IA </h4>
+                    <p>Instalação • Configuração • Integração.</p>
+                </div>
+                <div class="skill-item reveal-scale" style="transition-delay:0.15s">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Segurança & Redes</h4>
+                    <p>Análise de disponibilidade, performance e gestão de certificados de segurança.</p>
+                </div>
+                <div class="skill-item reveal-scale" style="transition-delay:0.2s">
+                    <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+                    <h4>Gestão de Serviços</h4>
+                    <p>Visão ITSM, melhoria contínua de processos e suporte estratégico à tomada de decisão.</p>
+                </div>
+                <div class="skill-item reveal-scale" style="transition-delay:0.25s">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                    <h4>Gamificação</h4>
+                    <p>Ambiente de aprendizado prático em Redes e Cibersegurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div style="max-width:30rem;margin:0 auto">
+            <p style="color:rgba(50,49,48,0.45);font-size:0.8rem">&copy; 2026 SF. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div style="display:flex;flex-direction:column;align-items:center">
+            <img id="modalImg" src="">
+            <p id="modalCap" class="cap"></p>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        /* ---------- Video de fundo: sobe depois que a pagina carrega ---------- */
+        var bgVideo = document.getElementById('bgVideo');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var saveData = navigator.connection && navigator.connection.saveData;
+
+if (bgVideo) {
+            var showVideo = function () {
+                bgVideo.classList.add('ready');
+            };
+            bgVideo.addEventListener('playing', showVideo, { once: true });
+            bgVideo.addEventListener('canplay', showVideo, { once: true });
+
+            var startVideo = function () {
+                if (reduceMotion || saveData) return;
+                var p = bgVideo.play();
+                if (p && p.catch) p.catch(function () { /* autoplay bloqueado: poster permanece */ });
+            };
+            if (document.readyState === 'complete') {
+                startVideo();
+            } else {
+                window.addEventListener('load', startVideo, { once: true });
+            }
+
+            /* para o video quando a aba nao esta visivel (economiza CPU/GPU) */
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    if (!bgVideo.paused) bgVideo.pause();
+                } else {
+                    startVideo();
+                }
+            });
+        }
+
+        /* ---------- Scroll Reveal ---------- */
+        var revealTargets = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .slide-card';
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('vis');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll(revealTargets).forEach(function (el) {
+                observer.observe(el);
+            });
+        } else {
+            document.querySelectorAll(revealTargets).forEach(function (el) {
+                el.classList.add('vis');
+            });
+        }
+
+        /* ---------- Modal ---------- */
+        var modal = document.getElementById('modal');
+        var modalImg = document.getElementById('modalImg');
+        var modalCap = document.getElementById('modalCap');
+
+        function openModal(src, caption) {
+            modal.classList.add('open');
+            modalImg.src = src;
+            modalCap.textContent = caption || '';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.remove('open');
+            modalImg.removeAttribute('src');
+            document.body.style.overflow = '';
+        }
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        /* ---------- Nav scroll ---------- */
+        var navbar = document.getElementById('navbar');
+        var navTicking = false;
+        window.addEventListener('scroll', function () {
+            if (navTicking) return;
+            navTicking = true;
+            window.requestAnimationFrame(function () {
+                navbar.classList.toggle('scrolled', window.scrollY > 100);
+                navTicking = false;
+            });
+        }, { passive: true });
+
+        /* ---------- Smooth scroll ---------- */
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                var t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
