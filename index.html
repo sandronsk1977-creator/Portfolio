@@ -234,15 +234,7 @@
             display: block;
         }
 
-            /* Anel giratorio: anima o ANGULO do conic-gradient em vez de girar o
-           elemento. Girar um retangulo nao quadrado faz os cantos escaparem
-           da caixa (era o que aparecia como aba azul torta ao redor da foto). */
-        @property --ring-angle {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
-        .profile-wrap::before {
+           .profile-wrap::before {
             content: '';
             position: absolute;
             inset: -6px;
