@@ -14,6 +14,7 @@
     
     <meta charset="UTF-8">
     <meta name="author" content="Sandro Ferreira">
+    <meta name="description" content="Portfólio de Sandro Ferreira: infraestrutura de TI, monitoramento com Zabbix e Grafana, redes, cibersegurança e automação com IA.">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#050b18">
@@ -219,12 +220,20 @@
             align-items: start;
             margin-top: 2.5rem;
         }
-        
-      .profile-wrap img {
+        .profile-wrap {
+            position: relative;
+            display: inline-block;
+            line-height: 0;
+            border-radius: 1.5rem;
+            /* o anel vive em inset negativo; a foto nunca deve estourar a coluna */
+            max-width: 100%;
+        }
+
+        .profile-wrap img {
             width: 100%;
             max-width: 240px;
-            /* height:auto e obrigatorio: sem isso o atributo height="526" do
-               HTML vira altura fixae a imagem e esticada */
+            /* height:auto e obrigatorio: sem isso o atributo height do HTML
+               vira altura fixa e a imagem fica esticada */
             height: auto;
             aspect-ratio: auto; /* Mantém uma proporção equilibrada sem esticar */
             object-fit: contain;
@@ -234,7 +243,16 @@
             display: block;
         }
 
-           .profile-wrap::before {
+        /* Anel giratorio: anima o ANGULO do conic-gradient em vez de girar o
+           elemento. Girar um retangulo nao quadrado faz os cantos escaparem
+           da caixa (era o que aparecia como aba azul torta ao redor da foto). */
+        @property --ring-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        .profile-wrap::before {
             content: '';
             position: absolute;
             inset: -6px;
@@ -414,7 +432,7 @@
             font-size: 0.7rem;
             text-align: center;
             padding: 0.4rem;
-            color: rgba(50,49,48,0.55);
+            color: #5c5f62;
         }
 
         .project-divider {
@@ -504,7 +522,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .skill-item h4 {
+        .skill-item h3 {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
@@ -709,6 +727,7 @@
         <a href="https://api.whatsapp.com/send/?phone=5562984498565&text=O%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%AD%E2%81%A3%E2%81%A6%E2%81%A2%CD%8F%E2%81%A8%E2%81%A6%E2%81%A8%E2%80%AA%E2%81%A0%CD%8F%E2%81%AB%E2%81%A3%E2%81%A3%E2%81%AB%E2%81%A6%E2%81%A3%E2%81%AA%E2%81%AA%E2%81%A4%E2%81%AC%E2%81%AD%E2%81%AC%E2%81%ADl%C3%A1%2C+vim+atrav%C3%A9s+da+p%C3%A1gina+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+você&type=phone_number&app_absent=0" class="social" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
 
+    <main>
     <!-- Hero -->
     <section id="inicio">
         <!-- HERO ESCURO (Figura 2) -->
@@ -791,7 +810,7 @@
             <div class="about-grid">
                 <div class="reveal-left" style="transition-delay:0.1s">
                     <div class="profile-wrap">
-                        <img src="img/perfil.png" width="480" height="526" alt="Sandro Ferreira" decoding="async">
+                        <img src="img/perfil.png" width="302" height="302" alt="Sandro Ferreira" decoding="async">
                     </div>
                 </div>
                 <div class="reveal-right" style="transition-delay:0.15s">
@@ -950,37 +969,39 @@
             <div class="skills-grid">
                 <div class="skill-item reveal-scale" style="transition-delay:0s">
                     <div class="skill-icon"><i class="fas fa-server"></i></div>
-                    <h4>Infraestrutura & Cloud</h4>
+                    <h3>Infraestrutura & Cloud</h3>
                     <p>Administração de Data Center • Firewalls • Servidores Físicos e Virtuais • Switches L2/L3 • Backups • Cloud Azure e AWS.</p>
                 </div>
                 <div class="skill-item reveal-scale" style="transition-delay:0.05s">
                     <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h4>Monitoramento ITSM</h4>
+                    <h3>Monitoramento ITSM</h3>
                     <p>Expertise em Zabbix e Grafana para criação de dashboards operacionais e painéis executivos.</p>
                 </div>
                 <div class="skill-item reveal-scale" style="transition-delay:0.1s">
                     <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h4>Automação com IA </h4>
+                    <h3>Automação com IA </h3>
                     <p>Instalação • Configuração • Integração.</p>
                 </div>
                 <div class="skill-item reveal-scale" style="transition-delay:0.15s">
                     <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>Segurança & Redes</h4>
+                    <h3>Segurança & Redes</h3>
                     <p>Análise de disponibilidade, performance e gestão de certificados de segurança.</p>
                 </div>
                 <div class="skill-item reveal-scale" style="transition-delay:0.2s">
                     <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
-                    <h4>Gestão de Serviços</h4>
+                    <h3>Gestão de Serviços</h3>
                     <p>Visão ITSM, melhoria contínua de processos e suporte estratégico à tomada de decisão.</p>
                 </div>
                 <div class="skill-item reveal-scale" style="transition-delay:0.25s">
                     <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                    <h4>Gamificação</h4>
+                    <h3>Gamificação</h3>
                     <p>Ambiente de aprendizado prático em Redes e Cibersegurança.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer id="contato">

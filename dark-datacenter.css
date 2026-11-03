@@ -161,7 +161,7 @@ body.hero-dark .skill-item:hover {
 body.hero-dark .about-card h3,
 body.hero-dark .highlight-item h3,
 body.hero-dark .highlight-item h4,
-body.hero-dark .skill-item h4,
+body.hero-dark .skill-item h3,
 body.hero-dark .proj3-grid h4 { color: #eaf2fb !important; }
 body.hero-dark .about-card p,
 body.hero-dark .highlight-item p,
@@ -212,6 +212,9 @@ body.hero-dark .project-info p {
     /* tom azul-acinzentado: legivel sem ofuscar */
     color: rgba(226,236,248,0.92) !important;
 }
+/* h4 e links com style inline (#0078d4) ficam ilegiveis sobre o card escuro */
+body.hero-dark .project-info .about-card h4,
+body.hero-dark .project-info .about-card a { color: #6cc6ff !important; }
 body.hero-dark .project-info ul li {
     background: rgba(53,160,245,0.14) !important;
     border: 1px solid rgba(71,195,255,0.28) !important;
